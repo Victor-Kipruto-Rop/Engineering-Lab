@@ -1,0 +1,27 @@
+@media (max-width: 600px) {
+  .hero-stats { gap: 1.5rem; }
+  .grid { grid-template-columns: 1fr; }
+  .metric-grid { grid-template-columns: repeat(2, 1fr); }
+  table { min-width: 100%; }
+  thead { display: none; }
+  tbody tr {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0.6rem 0.9rem;
+    border-bottom: 1px solid var(--border);
+  }
+  tbody td {
+    border: none;
+    padding: 0.2rem 0;
+  }
+  tbody td::before {
+    content: attr(data-label);
+    display: block;
+    color: var(--text-2);
+    font-size: 0.65rem;
+  }
+}
+
+@container (max-width: 400px) {
+  .card { padding: 1rem; }
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Explorer | Engineering Lab</title>
+<meta name="description" content="Explore sanitized demo transaction data: filter, sort, and inspect anomaly scores from PesaGuard's reconciliation pipeline.">
+<link rel="canonical" href="https://lab.victorkipruto.com/pages/data.html">
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/data.css">
+<link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body data-nav="pages/data.html">
+<div class="rail-scrim"></div>
+<div class="shell">
+  <aside class="rail">
+    <div class="rail-brand">
+      <span class="mark" aria-hidden="true">VK</span>
+      <span class="name">Engineering Lab</span>
+      <span class="role">Victor Kipruto Rop</span>
+    </div>
+    <div class="rail-footer">
+      <a href="https://www.victorkipruto.com">&larr; Back to Victor Kipruto</a>
+    </div>
+  </aside>
+
+  <div>
+    <div class="rail-toggle">
+      <button type="button" aria-expanded="false" class="btn" style="padding:0.3rem 0.6rem;">☰</button>
+      ENGINEERING LAB
+    </div>
+
+    <main>
+      <div class="page-header">
+        <span class="eyebrow">DATA</span>
+        <h1>Data explorer</h1>
+        <p>Inspect a transaction dataset the way a reconciliation engineer would: filter, sort, and open a row for its anomaly detail.</p>
+      </div>
+
+      <span class="sanitized-banner">⚠ SANITIZED DEMO DATA — no real M-Pesa identifiers or customer information</span>
+
+      <div class="summary-stats" id="summary-stats"></div>
+
+      <div class="filters">
+        <div class="field search">
+          <label for="q">Search transaction ID</label>
+          <input type="search" id="q" placeholder="DEMO-00001…">
+        </div>
+        <div class="field">
+          <label for="f-type">Type</label>
+          <select id="f-type"><option value="">All types</option></select>
+        </div>
+        <div class="field">
+          <label for="f-status">Status</label>
+          <select id="f-status"><option value="">All statuses</option></select>
+        </div>
+      </div>
+
+      <p class="result-count" id="result-count" role="status" aria-live="polite"></p>
+
+      <div class="table-wrap">
+        <table id="data-table">
+          <thead>
+            <tr>
+              <th data-key="id">Transaction ID</th>
+              <th data-key="timestamp">Timestamp</th>
+              <th data-key="type">Type</th>
+              <th data-key="amount">Amount (KES)</th>
+              <th data-key="status">Status</th>
+              <th data-key="anomalyScore">Anomaly score</th>
+              <th data-key="channel">Channel</th>
+            </tr>
+          </thead>
+          <tbody id="data-tbody"></tbody>
+        </table>
+      </div>
+
+      <div class="pagination">
+        <span id="page-info"></span>
+        <div class="controls">
+          <button class="btn" id="prev-page">← Prev</button>
+          <button class="btn" id="next-page">Next →</button>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script type="module" src="../js/app.js"></script>
+<script type="module" src="../js/data.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+.arch-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.arch-controls {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.arch-controls button {
+  width: 34px; height: 34px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-2);
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-family: var(--font-mono);
+}
+
+.arch-controls button:hover { color: var(--accent); border-color: var(--accent); }
+
+.arch-legend {
+  display: flex;
+  gap: 1rem;
+  font-size: var(--fs-00);
+  color: var(--text-2);
+  flex-wrap: wrap;
+}
+
+.arch-legend .item { display: flex; align-items: center; gap: 0.4rem; }
+.arch-legend .swatch { width: 9px; height: 9px; border-radius: 2px; }
+
+.arch-stage {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(var(--bg-2) 1px, transparent 1px) 0 0 / 24px 24px,
+    linear-gradient(90deg, var(--bg-2) 1px, transparent 1px) 0 0 / 24px 24px,
+    var(--bg);
+  overflow: hidden;
+  height: min(72vh, 760px);
+  touch-action: none;
+  cursor: grab;
+}
+
+.arch-stage:active { cursor: grabbing; }
+
+.arch-stage svg { width: 100%; height: 100%; display: block; }
+
+.arch-node rect {
+  fill: var(--surface);
+  stroke: var(--border);
+  stroke-width: 1.5;
+  transition: stroke var(--transition), filter var(--transition);
+}
+
+.arch-node text {
+  fill: var(--text);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  pointer-events: none;
+}
+
+.arch-node .type-chip {
+  fill-opacity: 0.9;
+}
+
+.arch-node:hover rect, .arch-node:focus rect {
+  stroke: var(--accent);
+}
+
+.arch-node.selected rect {
+  stroke: var(--accent);
+  stroke-width: 2.5;
+  filter: drop-shadow(0 0 6px rgba(46, 204, 135, 0.4));
+}
+
+.arch-edge {
+  stroke: var(--border);
+  stroke-width: 1.5;
+  fill: none;
+}
+
+.arch-edge.flow {
+  stroke: var(--accent);
+  stroke-dasharray: 5 5;
+  animation: flow-dash 1.2s linear infinite;
+}
+
+@keyframes flow-dash {
+  to { stroke-dashoffset: -20; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arch-edge.flow { animation: none; }
+}
+
+.arch-meta {
+  margin-top: 1.25rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 720px) {
+  .arch-meta { grid-template-columns: 1fr; }
+  .arch-stage { height: 60vh; }
+}

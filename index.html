@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Engineering Lab | Victor Kipruto Rop</title>
+<meta name="description" content="An interactive environment for exploring Victor Kipruto Rop's data engineering systems, architectures, pipelines, experiments and engineering decisions.">
+<link rel="canonical" href="https://lab.victorkipruto.com/">
+<meta property="og:title" content="Engineering Lab | Victor Kipruto Rop">
+<meta property="og:description" content="Systems I've built. Data I've processed. Infrastructure I've tested.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-nav="index.html">
+<div class="rail-scrim"></div>
+<div class="shell">
+  <aside class="rail">
+    <div class="rail-brand">
+      <span class="mark" aria-hidden="true">VK</span>
+      <span class="name">Engineering Lab</span>
+      <span class="role">Victor Kipruto Rop</span>
+    </div>
+    <!-- nav injected by app.js -->
+    <div class="rail-footer">
+      <a href="https://www.victorkipruto.com">&larr; Back to Victor Kipruto</a>
+    </div>
+  </aside>
+
+  <div>
+    <div class="rail-toggle">
+      <button type="button" aria-expanded="false" aria-controls="primary-rail" class="btn" style="padding:0.3rem 0.6rem;">☰</button>
+      ENGINEERING LAB
+    </div>
+
+    <main id="main">
+      <section class="hero">
+        <span class="eyebrow">ENGINEERING LAB</span>
+        <h1>Systems I've built. Data I've processed. Infrastructure I've tested.</h1>
+        <p>An interactive environment for exploring my data engineering systems, architectures, pipelines, experiments, and the decisions behind them — not a list of technologies, but the evidence.</p>
+        <div class="card-actions">
+          <a class="btn primary" href="pages/systems.html">Inspect systems</a>
+          <a class="btn" href="pages/architecture.html">View an architecture</a>
+        </div>
+        <div class="hero-stats" id="hero-stats" aria-label="Registry summary">
+          <div class="stat"><span class="value">—</span><span class="label">Systems tracked</span></div>
+          <div class="stat"><span class="value">—</span><span class="label">Active in production</span></div>
+          <div class="stat"><span class="value">—</span><span class="label">With live architecture maps</span></div>
+        </div>
+      </section>
+
+      <section aria-labelledby="registry-heading">
+        <div class="page-header" style="border:none; margin-bottom:1.25rem; padding-bottom:0;">
+          <h2 id="registry-heading">System registry</h2>
+          <p>Six systems, each with a different amount of instrumentation. Status reflects reality, not ambition.</p>
+        </div>
+        <div id="system-grid" class="grid" aria-live="polite">
+          <div class="empty-state">Loading systems…</div>
+        </div>
+        <div class="card-actions" style="margin-top:1.5rem;">
+          <a class="btn" href="pages/systems.html">Open full registry →</a>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+
+<script type="module" src="js/app.js"></script>
+<script type="module">
+import { loadJSON, renderEmptyState, escapeHTML } from './js/app.js';
+
+const grid = document.getElementById('system-grid');
+const statsEl = document.getElementById('hero-stats');
+
+function statusClass(status) {
+  return status.toLowerCase();
+}
+
+function systemCard(sys) {
+  const features = [
+    ['architecture', 'Architecture'],
+    ['monitor', 'Monitor'],
+    ['data', 'Data'],
+    ['api', 'API'],
+    ['code', 'Code'],
+    ['caseStudy', 'Case study']
+  ];
+  return `
+    <article class="card">
+      <div class="card-head">
+        <div>
+          <h3>${escapeHTML(sys.name)}</h3>
+          <span class="category">${escapeHTML(sys.category)}</span>
+        </div>
+        <span class="status-pill ${statusClass(sys.status)}">${escapeHTML(sys.status)}</span>
+      </div>
+      <p>${escapeHTML(sys.description)}</p>
+      <div class="tag-row">
+        ${sys.technologies.map(t => `<span class="tag">${escapeHTML(t)}</span>`).join('')}
+      </div>
+      <div class="feature-row">
+        ${features.map(([key, label]) => `<span class="${sys.features[key] ? 'on' : ''}">${sys.features[key] ? '●' : '○'} ${label}</span>`).join('')}
+      </div>
+      <div class="card-actions">
+        <a class="btn primary" href="pages/systems.html?system=${encodeURIComponent(sys.id)}">Inspect system</a>
+        <a class="btn" href="${sys.github}" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </article>
+  `;
+}
+
+(async () => {
+  const result = await loadJSON('data/systems.json');
+  if (!result.ok) {
+    renderEmptyState(grid, `Unable to load system registry (${result.error}).`);
+    return;
+  }
+  const systems = result.data.systems;
+  grid.innerHTML = systems.slice(0, 4).map(systemCard).join('');
+
+  const active = systems.filter(s => s.status === 'ACTIVE').length;
+  const withArch = systems.filter(s => s.features.architecture).length;
+  const stats = statsEl.querySelectorAll('.stat .value');
+  stats[0].textContent = systems.length;
+  stats[1].textContent = active;
+  stats[2].textContent = withArch;
+})();
+</script>
+</body>
+</html>

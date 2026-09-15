@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>API Playground | Engineering Lab</title>
+<meta name="description" content="A safe, local API playground for exploring PesaGuard-style demo endpoints — no production systems are reachable.">
+<link rel="canonical" href="https://lab.victorkipruto.com/pages/api-playground.html">
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body data-nav="pages/api-playground.html">
+<div class="rail-scrim"></div>
+<div class="shell">
+  <aside class="rail">
+    <div class="rail-brand">
+      <span class="mark" aria-hidden="true">VK</span>
+      <span class="name">Engineering Lab</span>
+      <span class="role">Victor Kipruto Rop</span>
+    </div>
+    <div class="rail-footer">
+      <a href="https://www.victorkipruto.com">&larr; Back to Victor Kipruto</a>
+    </div>
+  </aside>
+
+  <div>
+    <div class="rail-toggle">
+      <button type="button" aria-expanded="false" class="btn" style="padding:0.3rem 0.6rem;">☰</button>
+      ENGINEERING LAB
+    </div>
+
+    <main>
+      <div class="page-header">
+        <span class="eyebrow">API PLAYGROUND</span>
+        <h1>API playground</h1>
+        <p>Try demo endpoints modeled on PesaGuard's real API surface. Requests never leave your browser.</p>
+      </div>
+
+      <div class="callout" style="margin-bottom:1.5rem;">
+        <strong style="color:var(--info); font-family:var(--font-mono);">DEMO ENVIRONMENT</strong> — No production data is accessed. Every response below is generated locally by this page.
+      </div>
+
+      <div class="tabs" id="endpoint-tabs" role="tablist"></div>
+
+      <div id="endpoint-meta" class="callout" style="margin-bottom:1.25rem;"></div>
+
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap: var(--gap);" id="playground-columns">
+        <div>
+          <div class="field">
+            <label for="payload">Request payload (JSON)</label>
+            <textarea id="payload" rows="10"></textarea>
+          </div>
+          <div class="card-actions" style="margin-top:0.75rem;">
+            <button class="btn primary" id="send-btn">Send request</button>
+            <button class="btn" id="validate-btn">Validate JSON</button>
+            <button class="btn" id="reset-btn">Reset</button>
+          </div>
+          <p id="validation-msg" style="font-size:var(--fs-00); margin-top:0.5rem;"></p>
+        </div>
+
+        <div>
+          <div class="code-block">
+            <div class="code-head">
+              <span id="response-status">Awaiting request</span>
+              <button class="btn" id="copy-response" style="padding:0.2rem 0.55rem;">Copy</button>
+            </div>
+            <pre><code id="response-body">—</code></pre>
+          </div>
+          <p style="font-size:var(--fs-00); color:var(--text-2); margin-top:0.5rem;" id="latency-note"></p>
+        </div>
+      </div>
+
+      <section style="margin-top:2.5rem;">
+        <h2>Request history</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Time</th><th>Endpoint</th><th>Status</th><th>Latency</th></tr></thead>
+            <tbody id="history-tbody"><tr><td colspan="4" style="color:var(--text-2);">No requests yet.</td></tr></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+
+<script type="module" src="../js/app.js"></script>
+<script type="module" src="../js/api-playground.js"></script>
+</body>
+</html>

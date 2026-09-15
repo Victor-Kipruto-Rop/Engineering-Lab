@@ -1,0 +1,562 @@
+{
+  "environment": "DEMO",
+  "source": "Synthetic telemetry generator",
+  "lastUpdated": "2026-09-16T06:00:00Z",
+  "status": {
+    "system": "OPERATIONAL",
+    "api": "OPERATIONAL",
+    "database": "OPERATIONAL",
+    "streamProcessor": "DEGRADED",
+    "queue": "OPERATIONAL"
+  },
+  "summary": {
+    "transactionsProcessed24h": 184320,
+    "avgLatencyMs": 62.4,
+    "p95LatencyMs": 148.9,
+    "errorRatePct": 0.34,
+    "dbConnections": 18,
+    "throughputRowsPerSec": 66000
+  },
+  "series": [
+    {
+      "time": "06:00",
+      "requestsPerSec": 38.6,
+      "eventsPerSec": 123.5,
+      "latencyMsAvg": 47.5,
+      "latencyMsP95": 181.6,
+      "errorRatePct": 0.13,
+      "dlqMessages": 4
+    },
+    {
+      "time": "06:01",
+      "requestsPerSec": 35.3,
+      "eventsPerSec": 113.1,
+      "latencyMsAvg": 69.1,
+      "latencyMsP95": 210.1,
+      "errorRatePct": 0.3,
+      "dlqMessages": 0
+    },
+    {
+      "time": "06:02",
+      "requestsPerSec": 34.8,
+      "eventsPerSec": 111.4,
+      "latencyMsAvg": 43.5,
+      "latencyMsP95": 120.0,
+      "errorRatePct": 0.54,
+      "dlqMessages": 6
+    },
+    {
+      "time": "06:03",
+      "requestsPerSec": 35.3,
+      "eventsPerSec": 113.1,
+      "latencyMsAvg": 87.4,
+      "latencyMsP95": 179.4,
+      "errorRatePct": 0.72,
+      "dlqMessages": 0
+    },
+    {
+      "time": "06:04",
+      "requestsPerSec": 36.0,
+      "eventsPerSec": 115.1,
+      "latencyMsAvg": 59.8,
+      "latencyMsP95": 217.4,
+      "errorRatePct": 0.1,
+      "dlqMessages": 6
+    },
+    {
+      "time": "06:05",
+      "requestsPerSec": 33.0,
+      "eventsPerSec": 105.7,
+      "latencyMsAvg": 61.0,
+      "latencyMsP95": 169.5,
+      "errorRatePct": 0.71,
+      "dlqMessages": 4
+    },
+    {
+      "time": "06:06",
+      "requestsPerSec": 35.5,
+      "eventsPerSec": 113.8,
+      "latencyMsAvg": 49.0,
+      "latencyMsP95": 174.0,
+      "errorRatePct": 0.78,
+      "dlqMessages": 2
+    },
+    {
+      "time": "06:07",
+      "requestsPerSec": 32.3,
+      "eventsPerSec": 103.4,
+      "latencyMsAvg": 75.6,
+      "latencyMsP95": 172.1,
+      "errorRatePct": 0.76,
+      "dlqMessages": 3
+    },
+    {
+      "time": "06:08",
+      "requestsPerSec": 33.8,
+      "eventsPerSec": 108.1,
+      "latencyMsAvg": 61.4,
+      "latencyMsP95": 144.6,
+      "errorRatePct": 0.72,
+      "dlqMessages": 3
+    },
+    {
+      "time": "06:09",
+      "requestsPerSec": 32.7,
+      "eventsPerSec": 104.5,
+      "latencyMsAvg": 52.4,
+      "latencyMsP95": 129.8,
+      "errorRatePct": 0.95,
+      "dlqMessages": 0
+    },
+    {
+      "time": "06:10",
+      "requestsPerSec": 33.3,
+      "eventsPerSec": 106.4,
+      "latencyMsAvg": 66.3,
+      "latencyMsP95": 206.3,
+      "errorRatePct": 0.89,
+      "dlqMessages": 2
+    },
+    {
+      "time": "06:11",
+      "requestsPerSec": 34.1,
+      "eventsPerSec": 109.2,
+      "latencyMsAvg": 43.7,
+      "latencyMsP95": 166.3,
+      "errorRatePct": 0.24,
+      "dlqMessages": 2
+    },
+    {
+      "time": "06:12",
+      "requestsPerSec": 31.3,
+      "eventsPerSec": 100.3,
+      "latencyMsAvg": 64.4,
+      "latencyMsP95": 114.3,
+      "errorRatePct": 0.82,
+      "dlqMessages": 6
+    },
+    {
+      "time": "06:13",
+      "requestsPerSec": 31.8,
+      "eventsPerSec": 101.8,
+      "latencyMsAvg": 79.5,
+      "latencyMsP95": 200.0,
+      "errorRatePct": 0.44,
+      "dlqMessages": 2
+    },
+    {
+      "time": "06:14",
+      "requestsPerSec": 32.6,
+      "eventsPerSec": 104.2,
+      "latencyMsAvg": 69.0,
+      "latencyMsP95": 160.2,
+      "errorRatePct": 1.02,
+      "dlqMessages": 2
+    },
+    {
+      "time": "06:15",
+      "requestsPerSec": 32.4,
+      "eventsPerSec": 103.5,
+      "latencyMsAvg": 73.2,
+      "latencyMsP95": 116.7,
+      "errorRatePct": 0.86,
+      "dlqMessages": 5
+    },
+    {
+      "time": "06:16",
+      "requestsPerSec": 33.0,
+      "eventsPerSec": 105.5,
+      "latencyMsAvg": 74.1,
+      "latencyMsP95": 159.0,
+      "errorRatePct": 0.87,
+      "dlqMessages": 5
+    },
+    {
+      "time": "06:17",
+      "requestsPerSec": 31.8,
+      "eventsPerSec": 101.6,
+      "latencyMsAvg": 87.0,
+      "latencyMsP95": 149.1,
+      "errorRatePct": 0.75,
+      "dlqMessages": 3
+    },
+    {
+      "time": "06:18",
+      "requestsPerSec": 28.2,
+      "eventsPerSec": 90.3,
+      "latencyMsAvg": 78.4,
+      "latencyMsP95": 124.2,
+      "errorRatePct": 0.33,
+      "dlqMessages": 3
+    },
+    {
+      "time": "06:19",
+      "requestsPerSec": 31.6,
+      "eventsPerSec": 101.0,
+      "latencyMsAvg": 64.8,
+      "latencyMsP95": 128.3,
+      "errorRatePct": 0.51,
+      "dlqMessages": 2
+    },
+    {
+      "time": "06:20",
+      "requestsPerSec": 34.6,
+      "eventsPerSec": 110.8,
+      "latencyMsAvg": 81.0,
+      "latencyMsP95": 205.0,
+      "errorRatePct": 0.37,
+      "dlqMessages": 3
+    },
+    {
+      "time": "06:21",
+      "requestsPerSec": 38.5,
+      "eventsPerSec": 123.3,
+      "latencyMsAvg": 74.1,
+      "latencyMsP95": 151.8,
+      "errorRatePct": 0.32,
+      "dlqMessages": 0
+    },
+    {
+      "time": "06:22",
+      "requestsPerSec": 35.9,
+      "eventsPerSec": 115.0,
+      "latencyMsAvg": 51.6,
+      "latencyMsP95": 135.7,
+      "errorRatePct": 0.61,
+      "dlqMessages": 4
+    },
+    {
+      "time": "06:23",
+      "requestsPerSec": 33.4,
+      "eventsPerSec": 106.9,
+      "latencyMsAvg": 54.1,
+      "latencyMsP95": 126.0,
+      "errorRatePct": 0.66,
+      "dlqMessages": 4
+    },
+    {
+      "time": "06:24",
+      "requestsPerSec": 33.9,
+      "eventsPerSec": 108.6,
+      "latencyMsAvg": 87.7,
+      "latencyMsP95": 186.0,
+      "errorRatePct": 0.64,
+      "dlqMessages": 4
+    },
+    {
+      "time": "06:25",
+      "requestsPerSec": 35.2,
+      "eventsPerSec": 112.5,
+      "latencyMsAvg": 77.0,
+      "latencyMsP95": 160.2,
+      "errorRatePct": 1.05,
+      "dlqMessages": 6
+    },
+    {
+      "time": "06:26",
+      "requestsPerSec": 36.6,
+      "eventsPerSec": 117.1,
+      "latencyMsAvg": 68.0,
+      "latencyMsP95": 153.8,
+      "errorRatePct": 0.5,
+      "dlqMessages": 3
+    },
+    {
+      "time": "06:27",
+      "requestsPerSec": 37.7,
+      "eventsPerSec": 120.6,
+      "latencyMsAvg": 43.1,
+      "latencyMsP95": 117.4,
+      "errorRatePct": 0.29,
+      "dlqMessages": 1
+    },
+    {
+      "time": "06:28",
+      "requestsPerSec": 34.6,
+      "eventsPerSec": 110.6,
+      "latencyMsAvg": 70.0,
+      "latencyMsP95": 121.3,
+      "errorRatePct": 0.7,
+      "dlqMessages": 4
+    },
+    {
+      "time": "06:29",
+      "requestsPerSec": 31.4,
+      "eventsPerSec": 100.4,
+      "latencyMsAvg": 58.2,
+      "latencyMsP95": 112.8,
+      "errorRatePct": 1.06,
+      "dlqMessages": 4
+    },
+    {
+      "time": "06:30",
+      "requestsPerSec": 30.4,
+      "eventsPerSec": 97.2,
+      "latencyMsAvg": 71.7,
+      "latencyMsP95": 215.1,
+      "errorRatePct": 0.74,
+      "dlqMessages": 3
+    },
+    {
+      "time": "06:31",
+      "requestsPerSec": 27.4,
+      "eventsPerSec": 87.6,
+      "latencyMsAvg": 82.4,
+      "latencyMsP95": 219.2,
+      "errorRatePct": 0.59,
+      "dlqMessages": 3
+    },
+    {
+      "time": "06:32",
+      "requestsPerSec": 25.9,
+      "eventsPerSec": 82.7,
+      "latencyMsAvg": 47.2,
+      "latencyMsP95": 192.5,
+      "errorRatePct": 0.9,
+      "dlqMessages": 3
+    },
+    {
+      "time": "06:33",
+      "requestsPerSec": 28.5,
+      "eventsPerSec": 91.2,
+      "latencyMsAvg": 48.1,
+      "latencyMsP95": 112.5,
+      "errorRatePct": 1.14,
+      "dlqMessages": 4
+    },
+    {
+      "time": "06:34",
+      "requestsPerSec": 27.4,
+      "eventsPerSec": 87.6,
+      "latencyMsAvg": 74.5,
+      "latencyMsP95": 210.6,
+      "errorRatePct": 0.92,
+      "dlqMessages": 2
+    },
+    {
+      "time": "06:35",
+      "requestsPerSec": 31.2,
+      "eventsPerSec": 99.9,
+      "latencyMsAvg": 83.2,
+      "latencyMsP95": 186.6,
+      "errorRatePct": 0.35,
+      "dlqMessages": 2
+    },
+    {
+      "time": "06:36",
+      "requestsPerSec": 34.5,
+      "eventsPerSec": 110.3,
+      "latencyMsAvg": 57.8,
+      "latencyMsP95": 134.5,
+      "errorRatePct": 0.67,
+      "dlqMessages": 4
+    },
+    {
+      "time": "06:37",
+      "requestsPerSec": 33.1,
+      "eventsPerSec": 106.0,
+      "latencyMsAvg": 51.2,
+      "latencyMsP95": 199.3,
+      "errorRatePct": 1.18,
+      "dlqMessages": 6
+    },
+    {
+      "time": "06:38",
+      "requestsPerSec": 30.7,
+      "eventsPerSec": 98.2,
+      "latencyMsAvg": 52.0,
+      "latencyMsP95": 154.1,
+      "errorRatePct": 0.97,
+      "dlqMessages": 1
+    },
+    {
+      "time": "06:39",
+      "requestsPerSec": 30.8,
+      "eventsPerSec": 98.6,
+      "latencyMsAvg": 57.8,
+      "latencyMsP95": 113.2,
+      "errorRatePct": 0.08,
+      "dlqMessages": 2
+    },
+    {
+      "time": "06:40",
+      "requestsPerSec": 30.6,
+      "eventsPerSec": 97.9,
+      "latencyMsAvg": 49.7,
+      "latencyMsP95": 176.6,
+      "errorRatePct": 0.45,
+      "dlqMessages": 6
+    },
+    {
+      "time": "06:41",
+      "requestsPerSec": 34.1,
+      "eventsPerSec": 109.1,
+      "latencyMsAvg": 89.4,
+      "latencyMsP95": 215.1,
+      "errorRatePct": 0.47,
+      "dlqMessages": 1
+    },
+    {
+      "time": "06:42",
+      "requestsPerSec": 30.9,
+      "eventsPerSec": 98.9,
+      "latencyMsAvg": 63.5,
+      "latencyMsP95": 147.2,
+      "errorRatePct": 0.61,
+      "dlqMessages": 4
+    },
+    {
+      "time": "06:43",
+      "requestsPerSec": 33.6,
+      "eventsPerSec": 107.6,
+      "latencyMsAvg": 64.0,
+      "latencyMsP95": 181.8,
+      "errorRatePct": 0.97,
+      "dlqMessages": 0
+    },
+    {
+      "time": "06:44",
+      "requestsPerSec": 36.3,
+      "eventsPerSec": 116.2,
+      "latencyMsAvg": 46.0,
+      "latencyMsP95": 152.7,
+      "errorRatePct": 0.87,
+      "dlqMessages": 1
+    },
+    {
+      "time": "06:45",
+      "requestsPerSec": 36.1,
+      "eventsPerSec": 115.6,
+      "latencyMsAvg": 48.9,
+      "latencyMsP95": 196.8,
+      "errorRatePct": 0.43,
+      "dlqMessages": 6
+    },
+    {
+      "time": "06:46",
+      "requestsPerSec": 39.7,
+      "eventsPerSec": 127.1,
+      "latencyMsAvg": 76.1,
+      "latencyMsP95": 160.9,
+      "errorRatePct": 0.9,
+      "dlqMessages": 0
+    },
+    {
+      "time": "06:47",
+      "requestsPerSec": 41.5,
+      "eventsPerSec": 132.8,
+      "latencyMsAvg": 48.5,
+      "latencyMsP95": 124.0,
+      "errorRatePct": 0.22,
+      "dlqMessages": 3
+    },
+    {
+      "time": "06:48",
+      "requestsPerSec": 44.0,
+      "eventsPerSec": 140.7,
+      "latencyMsAvg": 47.3,
+      "latencyMsP95": 200.9,
+      "errorRatePct": 1.18,
+      "dlqMessages": 5
+    },
+    {
+      "time": "06:49",
+      "requestsPerSec": 47.5,
+      "eventsPerSec": 151.9,
+      "latencyMsAvg": 47.8,
+      "latencyMsP95": 170.3,
+      "errorRatePct": 0.07,
+      "dlqMessages": 6
+    },
+    {
+      "time": "06:50",
+      "requestsPerSec": 51.2,
+      "eventsPerSec": 163.9,
+      "latencyMsAvg": 72.5,
+      "latencyMsP95": 167.9,
+      "errorRatePct": 1.12,
+      "dlqMessages": 3
+    },
+    {
+      "time": "06:51",
+      "requestsPerSec": 55.1,
+      "eventsPerSec": 176.4,
+      "latencyMsAvg": 49.7,
+      "latencyMsP95": 206.1,
+      "errorRatePct": 0.08,
+      "dlqMessages": 1
+    },
+    {
+      "time": "06:52",
+      "requestsPerSec": 53.5,
+      "eventsPerSec": 171.1,
+      "latencyMsAvg": 52.0,
+      "latencyMsP95": 174.5,
+      "errorRatePct": 0.35,
+      "dlqMessages": 3
+    },
+    {
+      "time": "06:53",
+      "requestsPerSec": 56.1,
+      "eventsPerSec": 179.6,
+      "latencyMsAvg": 43.0,
+      "latencyMsP95": 191.4,
+      "errorRatePct": 1.08,
+      "dlqMessages": 5
+    },
+    {
+      "time": "06:54",
+      "requestsPerSec": 56.8,
+      "eventsPerSec": 181.8,
+      "latencyMsAvg": 85.2,
+      "latencyMsP95": 156.3,
+      "errorRatePct": 1.11,
+      "dlqMessages": 4
+    },
+    {
+      "time": "06:55",
+      "requestsPerSec": 53.8,
+      "eventsPerSec": 172.3,
+      "latencyMsAvg": 47.6,
+      "latencyMsP95": 166.2,
+      "errorRatePct": 1.05,
+      "dlqMessages": 6
+    },
+    {
+      "time": "06:56",
+      "requestsPerSec": 51.3,
+      "eventsPerSec": 164.2,
+      "latencyMsAvg": 40.2,
+      "latencyMsP95": 197.9,
+      "errorRatePct": 0.25,
+      "dlqMessages": 3
+    },
+    {
+      "time": "06:57",
+      "requestsPerSec": 52.3,
+      "eventsPerSec": 167.2,
+      "latencyMsAvg": 46.0,
+      "latencyMsP95": 116.8,
+      "errorRatePct": 0.83,
+      "dlqMessages": 4
+    },
+    {
+      "time": "06:58",
+      "requestsPerSec": 52.7,
+      "eventsPerSec": 168.7,
+      "latencyMsAvg": 79.2,
+      "latencyMsP95": 121.7,
+      "errorRatePct": 0.69,
+      "dlqMessages": 1
+    },
+    {
+      "time": "06:59",
+      "requestsPerSec": 50.2,
+      "eventsPerSec": 160.8,
+      "latencyMsAvg": 42.1,
+      "latencyMsP95": 120.8,
+      "errorRatePct": 0.57,
+      "dlqMessages": 0
+    }
+  ]
+}

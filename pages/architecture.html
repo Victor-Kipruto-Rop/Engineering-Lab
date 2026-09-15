@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Architecture Viewer | Engineering Lab</title>
+<meta name="description" content="Interactive system architecture diagrams — click a component to see its purpose, inputs, outputs, and failure handling.">
+<link rel="canonical" href="https://lab.victorkipruto.com/pages/architecture.html">
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/architecture.css">
+<link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body data-nav="pages/architecture.html">
+<div class="rail-scrim"></div>
+<div class="shell">
+  <aside class="rail">
+    <div class="rail-brand">
+      <span class="mark" aria-hidden="true">VK</span>
+      <span class="name">Engineering Lab</span>
+      <span class="role">Victor Kipruto Rop</span>
+    </div>
+    <div class="rail-footer">
+      <a href="https://www.victorkipruto.com">&larr; Back to Victor Kipruto</a>
+    </div>
+  </aside>
+
+  <div>
+    <div class="rail-toggle">
+      <button type="button" aria-expanded="false" class="btn" style="padding:0.3rem 0.6rem;">☰</button>
+      ENGINEERING LAB
+    </div>
+
+    <main>
+      <div class="page-header">
+        <span class="eyebrow">ARCHITECTURE</span>
+        <h1 id="arch-title">System architecture</h1>
+        <p>Click any component to see what it does, what it depends on, and how it fails. Drag to pan, use the controls or scroll to zoom.</p>
+      </div>
+
+      <div class="arch-toolbar">
+        <div class="field" style="min-width:220px;">
+          <label for="system-select">System</label>
+          <select id="system-select"></select>
+        </div>
+        <div class="arch-controls" role="group" aria-label="Diagram controls">
+          <button type="button" id="zoom-in" aria-label="Zoom in">+</button>
+          <button type="button" id="zoom-out" aria-label="Zoom out">&minus;</button>
+          <button type="button" id="zoom-reset" aria-label="Reset view">⤾</button>
+          <button type="button" id="toggle-flow" aria-label="Toggle data-flow animation" aria-pressed="false">▶</button>
+        </div>
+      </div>
+
+      <div class="arch-legend" id="arch-legend"></div>
+
+      <div class="arch-stage" id="arch-stage" tabindex="0" aria-label="System architecture diagram, use arrow keys after selecting a node to navigate">
+        <div class="empty-state">Loading architecture…</div>
+      </div>
+
+      <div class="arch-meta">
+        <div class="callout">Select a component to view details here, or use the panel that opens on click for the full breakdown.</div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<dialog class="panel" id="node-dialog">
+  <div class="panel-head">
+    <h2 id="dialog-title" style="margin:0; font-size: var(--fs-1);">Component</h2>
+    <button class="close-btn" id="dialog-close" aria-label="Close">✕</button>
+  </div>
+  <div class="panel-body" id="dialog-body"></div>
+</dialog>
+
+<script type="module" src="../js/app.js"></script>
+<script type="module" src="../js/architecture.js"></script>
+</body>
+</html>

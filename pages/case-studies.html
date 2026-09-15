@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Studies | Engineering Lab</title>
+<meta name="description" content="Technical case studies covering problem, architecture, data model, engineering decisions, bottlenecks, and measured results.">
+<link rel="canonical" href="https://lab.victorkipruto.com/pages/case-studies.html">
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body data-nav="pages/case-studies.html">
+<div class="rail-scrim"></div>
+<div class="shell">
+  <aside class="rail">
+    <div class="rail-brand">
+      <span class="mark" aria-hidden="true">VK</span>
+      <span class="name">Engineering Lab</span>
+      <span class="role">Victor Kipruto Rop</span>
+    </div>
+    <div class="rail-footer">
+      <a href="https://www.victorkipruto.com">&larr; Back to Victor Kipruto</a>
+    </div>
+  </aside>
+
+  <div>
+    <div class="rail-toggle">
+      <button type="button" aria-expanded="false" class="btn" style="padding:0.3rem 0.6rem;">☰</button>
+      ENGINEERING LAB
+    </div>
+
+    <main>
+      <div class="page-header">
+        <span class="eyebrow">CASE STUDIES</span>
+        <h1>PesaGuard — technical case study</h1>
+        <p>A walk through the problem, the architecture, and what testing actually showed, in the order an engineer would reason through it.</p>
+      </div>
+
+      <div class="sequence">
+        <div class="step">
+          <span class="num">01</span>
+          <div>
+            <h3>Problem</h3>
+            <p>M-Pesa transaction volumes for a small merchant were reconciled by hand at end of day, which meant discrepancies — failed callbacks, duplicate webhooks, timing mismatches — were only caught after the fact, sometimes days later.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="num">02</span>
+          <div>
+            <h3>Requirements</h3>
+            <p>Reconcile transactions against the ledger continuously rather than in a daily batch. Flag anomalies for review within minutes, not days. Never lose a transaction record even if a downstream service is briefly unavailable.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="num">03</span>
+          <div>
+            <h3>Architecture</h3>
+            <p>Webhook ingestion into an event processor, fanned out to a Kafka-backed fraud path and a direct-write validation path into PostgreSQL. See the full interactive diagram on the <a href="architecture.html?system=pesaguard" style="color:var(--accent);">Architecture page</a>.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="num">04</span>
+          <div>
+            <h3>Data model</h3>
+            <p>Two core tables: <code>transactions</code> (system of record, keyed on transaction ID) and <code>ledger_entries</code> (external ledger snapshot). Reconciliation is a set difference between the two, not a mutation of either.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="num">05</span>
+          <div>
+            <h3>Implementation</h3>
+            <p>Built incrementally: webhook ingestion and storage first, then the reconciliation job, then the Kafka fraud-scoring path once the core pipeline was stable. See selected snippets on the <a href="code.html" style="color:var(--accent);">Code page</a>.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="num">06</span>
+          <div>
+            <h3>Engineering decisions</h3>
+            <p>Chose PostgreSQL over a NoSQL store for the ledger because reconciliation is fundamentally a relational join problem. Chose Kafka specifically for the fraud path (not the whole pipeline) because only that path needed replay and multiple independent consumers.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="num">07</span>
+          <div>
+            <h3>Bottlenecks</h3>
+            <p>The reconciliation query slowed as the ledger grew, since it scanned all unsettled rows on every run. Resolved with a partial index — see the indexing snippet on the Code page — rather than denormalizing the schema.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="num">08</span>
+          <div>
+            <h3>Failure handling</h3>
+            <p>Idempotency keys on transaction IDs make webhook retries safe. Validation failures route to a dead-letter topic instead of blocking the stream. The fraud scorer falls back to rule-based scoring if the statistical model is unavailable.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="num">09</span>
+          <div>
+            <h3>Security</h3>
+            <p>Webhook signatures are verified with HMAC before any processing. Database roles are scoped per service with least privilege. No raw M-Pesa identifiers are logged outside the primary transaction table.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="num">10</span>
+          <div>
+            <h3>Performance</h3>
+            <div class="metric-grid" style="margin: 0.75rem 0 0;">
+              <div class="metric-cell"><span class="label">Rows written</span><span class="value">1,000,000</span></div>
+              <div class="metric-cell"><span class="label">Tenants</span><span class="value">100</span></div>
+              <div class="metric-cell"><span class="label">Write throughput</span><span class="value ok">~66K rows/sec</span></div>
+              <div class="metric-cell"><span class="label">Concurrency</span><span class="value">8</span></div>
+              <div class="metric-cell"><span class="label">Result</span><span class="value ok">PASS</span></div>
+            </div>
+            <p style="margin-top:0.75rem;">Load test conditions: 100 simulated tenants writing concurrently at concurrency level 8, sustained until 1,000,000 rows were written. Figures are from a load test run, not production traffic — see the <a href="experiments.html" style="color:var(--accent);">Experiments page</a> for method.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="num">11</span>
+          <div>
+            <h3>Results</h3>
+            <p>Reconciliation moved from a manual, end-of-day process to a continuous automated check, with the pilot customer now seeing discrepancies flagged within the same processing cycle rather than the next business day.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="num">12</span>
+          <div>
+            <h3>Lessons learned</h3>
+            <p>Introducing Kafka only where replay genuinely mattered kept the system easier to operate than putting every path through a message bus by default. A partial index solved the bottleneck more cheaply than a schema rewrite would have.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script type="module" src="../js/app.js"></script>
+<script type="module" src="../js/case-studies.js"></script>
+</body>
+</html>

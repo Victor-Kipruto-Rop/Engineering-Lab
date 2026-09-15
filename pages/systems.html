@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Systems Registry | Engineering Lab</title>
+<meta name="description" content="Searchable registry of Victor Kipruto Rop's data engineering systems, with status, technology, and category filtering.">
+<link rel="canonical" href="https://lab.victorkipruto.com/pages/systems.html">
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body data-nav="pages/systems.html">
+<div class="rail-scrim"></div>
+<div class="shell">
+  <aside class="rail">
+    <div class="rail-brand">
+      <span class="mark" aria-hidden="true">VK</span>
+      <span class="name">Engineering Lab</span>
+      <span class="role">Victor Kipruto Rop</span>
+    </div>
+    <div class="rail-footer">
+      <a href="https://www.victorkipruto.com">&larr; Back to Victor Kipruto</a>
+    </div>
+  </aside>
+
+  <div>
+    <div class="rail-toggle">
+      <button type="button" aria-expanded="false" class="btn" style="padding:0.3rem 0.6rem;">☰</button>
+      ENGINEERING LAB
+    </div>
+
+    <main>
+      <div class="page-header">
+        <span class="eyebrow">SYSTEMS</span>
+        <h1>System registry</h1>
+        <p>Every system below is real: something built, run, and at least partly tested. Filter by category, technology, or status to see how each one is instrumented.</p>
+      </div>
+
+      <div class="filters">
+        <div class="field search">
+          <label for="q">Search</label>
+          <input type="search" id="q" placeholder="Search name or description…">
+        </div>
+        <div class="field">
+          <label for="f-category">Category</label>
+          <select id="f-category"><option value="">All categories</option></select>
+        </div>
+        <div class="field">
+          <label for="f-tech">Technology</label>
+          <select id="f-tech"><option value="">All technologies</option></select>
+        </div>
+        <div class="field">
+          <label for="f-status">Status</label>
+          <select id="f-status">
+            <option value="">All statuses</option>
+            <option>ACTIVE</option>
+            <option>EXPERIMENTAL</option>
+            <option>DEMO</option>
+            <option>ARCHIVED</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-sort">Sort</label>
+          <select id="f-sort">
+            <option value="name">Name (A–Z)</option>
+            <option value="status">Status</option>
+          </select>
+        </div>
+      </div>
+
+      <p class="result-count" id="result-count" role="status" aria-live="polite"></p>
+      <div id="system-grid" class="grid">
+        <div class="empty-state">Loading systems…</div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script type="module" src="../js/app.js"></script>
+<script type="module">
+import { loadJSON, renderEmptyState, escapeHTML, debounce } from '../js/app.js';
+
+const grid = document.getElementById('system-grid');
+const countEl = document.getElementById('result-count');
+const qInput = document.getElementById('q');
+const catSelect = document.getElementById('f-category');
+const techSelect = document.getElementById('f-tech');
+const statusSelect = document.getElementById('f-status');
+const sortSelect = document.getElementById('f-sort');
+
+let systems = [];
+
+function statusClass(status) { return status.toLowerCase(); }
+
+function systemCard(sys) {
+  const features = [
+    ['architecture', 'Architecture'], ['monitor', 'Monitor'], ['data', 'Data'],
+    ['api', 'API'], ['code', 'Code'], ['caseStudy', 'Case study']
+  ];
+  return `
+    <article class="card">
+      <div class="card-head">
+        <div>
+          <h3>${escapeHTML(sys.name)}</h3>
+          <span class="category">${escapeHTML(sys.category)}</span>
+        </div>
+        <span class="status-pill ${statusClass(sys.status)}">${escapeHTML(sys.status)}</span>
+      </div>
+      <p>${escapeHTML(sys.description)}</p>
+      <div class="tag-row">${sys.technologies.map(t => `<span class="tag">${escapeHTML(t)}</span>`).join('')}</div>
+      <div class="feature-row">
+        ${features.map(([key, label]) => `<span class="${sys.features[key] ? 'on' : ''}">${sys.features[key] ? '●' : '○'} ${label}</span>`).join('')}
+      </div>
+      <div class="card-actions">
+        <a class="btn primary" href="architecture.html?system=${encodeURIComponent(sys.id)}">Inspect system</a>
+        <a class="btn" href="${sys.github}" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </article>
+  `;
+}
+
+function populateSelect(select, values) {
+  values.sort().forEach(v => {
+    const opt = document.createElement('option');
+    opt.value = v; opt.textContent = v;
+    select.appendChild(opt);
+  });
+}
+
+function applyFilters() {
+  const q = qInput.value.trim().toLowerCase();
+  const cat = catSelect.value;
+  const tech = techSelect.value;
+  const status = statusSelect.value;
+  const sort = sortSelect.value;
+
+  let results = systems.filter(s => {
+    if (cat && s.category !== cat) return false;
+    if (tech && !s.technologies.includes(tech)) return false;
+    if (status && s.status !== status) return false;
+    if (q && !(s.name.toLowerCase().includes(q) || s.description.toLowerCase().includes(q))) return false;
+    return true;
+  });
+
+  if (sort === 'name') results.sort((a, b) => a.name.localeCompare(b.name));
+  if (sort === 'status') results.sort((a, b) => a.status.localeCompare(b.status));
+
+  countEl.textContent = `${results.length} of ${systems.length} systems`;
+
+  if (!results.length) {
+    renderEmptyState(grid, 'No systems match these filters. Try clearing one.');
+    return;
+  }
+  grid.innerHTML = results.map(systemCard).join('');
+}
+
+(async () => {
+  const result = await loadJSON('../data/systems.json');
+  if (!result.ok) {
+    renderEmptyState(grid, `Unable to load system registry (${result.error}).`);
+    countEl.textContent = '';
+    return;
+  }
+  systems = result.data.systems;
+  populateSelect(catSelect, [...new Set(systems.map(s => s.category))]);
+  populateSelect(techSelect, [...new Set(systems.flatMap(s => s.technologies))]);
+
+  const params = new URLSearchParams(location.search);
+  if (params.get('system')) {
+    const sys = systems.find(s => s.id === params.get('system'));
+    if (sys) qInput.value = sys.name;
+  }
+
+  applyFilters();
+  [qInput].forEach(el => el.addEventListener('input', debounce(applyFilters, 150)));
+  [catSelect, techSelect, statusSelect, sortSelect].forEach(el => el.addEventListener('change', applyFilters));
+})();
+</script>
+</body>
+</html>

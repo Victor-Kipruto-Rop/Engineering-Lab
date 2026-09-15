@@ -1,0 +1,63 @@
+.env-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--info);
+  background: var(--surface);
+  border-radius: var(--radius);
+  margin-bottom: 1.5rem;
+  font-size: var(--fs-00);
+  color: var(--text-2);
+}
+
+.env-banner strong { color: var(--info); font-family: var(--font-mono); }
+
+.service-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.service-cell {
+  background: var(--surface);
+  padding: 0.9rem 1.1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.service-cell .name { font-size: var(--fs-0); }
+
+.chart-panel {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.chart-panel .chart-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.75rem;
+}
+
+.chart-panel h3 { margin: 0; font-size: var(--fs-1); }
+.chart-panel .chart-sub { font-size: var(--fs-00); color: var(--text-2); font-family: var(--font-mono); }
+
+.chart-panel svg { width: 100%; height: 220px; display: block; }
+
+.chart-grid-line { stroke: var(--border); stroke-width: 1; }
+.chart-line { fill: none; stroke: var(--accent); stroke-width: 2; }
+.chart-area { fill: url(#area-fill); opacity: 0.5; }
+.chart-axis-label { fill: var(--text-2); font-family: var(--font-mono); font-size: 10px; }

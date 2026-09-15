@@ -1,0 +1,68 @@
+.sanitized-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--warning);
+  color: var(--warning);
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-size: var(--fs-00);
+  margin-bottom: 1.25rem;
+}
+
+.dataset-tabs {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+
+.dataset-tabs button {
+  padding: 0.5rem 0.9rem;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-2);
+  border-radius: var(--radius);
+  font-size: var(--fs-0);
+  cursor: pointer;
+}
+
+.dataset-tabs button.active {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.summary-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.summary-stats .cell {
+  background: var(--surface);
+  padding: 0.9rem 1rem;
+}
+
+.summary-stats .cell .label { font-size: var(--fs-00); color: var(--text-2); }
+.summary-stats .cell .value { font-family: var(--font-mono); font-size: var(--fs-2); }
+
+.status-flag { padding: 0.1rem 0.4rem; border-radius: 2px; font-size: 0.7rem; }
+.status-flag.settled { color: var(--accent); }
+.status-flag.pending { color: var(--info); }
+.status-flag.flagged { color: var(--warning); }
+.status-flag.failed { color: var(--error); }
+
+.row-detail {
+  padding: 0.9rem 1.1rem;
+  background: var(--bg-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-00);
+  color: var(--text-2);
+  border-bottom: 1px solid var(--border);
+}

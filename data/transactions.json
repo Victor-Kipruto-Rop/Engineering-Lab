@@ -1,0 +1,2406 @@
+{
+  "label": "SANITIZED DEMO DATA",
+  "note": "No real M-Pesa transaction identifiers or customer data. Generated for demonstration.",
+  "transactions": [
+    {
+      "id": "DEMO-00001",
+      "timestamp": "2026-09-10T08:00:00Z",
+      "type": "PAYMENT",
+      "amount": 674.02,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.223,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00002",
+      "timestamp": "2026-09-10T08:07:00Z",
+      "type": "REVERSAL",
+      "amount": 2219.12,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.03,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00003",
+      "timestamp": "2026-09-10T08:14:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 12658.61,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.199,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00004",
+      "timestamp": "2026-09-10T08:21:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 11257.77,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.869,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00005",
+      "timestamp": "2026-09-10T08:28:00Z",
+      "type": "TRANSFER",
+      "amount": 8539.25,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.957,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00006",
+      "timestamp": "2026-09-10T08:35:00Z",
+      "type": "PAYMENT",
+      "amount": 2364.01,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.847,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00007",
+      "timestamp": "2026-09-10T08:42:00Z",
+      "type": "PAYMENT",
+      "amount": 18256.81,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.973,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00008",
+      "timestamp": "2026-09-10T08:49:00Z",
+      "type": "PAYMENT",
+      "amount": 13823.41,
+      "currency": "KES",
+      "status": "PENDING",
+      "anomalyScore": 0.619,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00009",
+      "timestamp": "2026-09-10T08:56:00Z",
+      "type": "REVERSAL",
+      "amount": 4847.6,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.661,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00010",
+      "timestamp": "2026-09-10T09:03:00Z",
+      "type": "PAYMENT",
+      "amount": 21390.18,
+      "currency": "KES",
+      "status": "FLAGGED",
+      "anomalyScore": 0.38,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00011",
+      "timestamp": "2026-09-10T09:10:00Z",
+      "type": "DEPOSIT",
+      "amount": 4108.22,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.67,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00012",
+      "timestamp": "2026-09-10T09:17:00Z",
+      "type": "REVERSAL",
+      "amount": 15892.71,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.245,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00013",
+      "timestamp": "2026-09-10T09:24:00Z",
+      "type": "TRANSFER",
+      "amount": 6785.2,
+      "currency": "KES",
+      "status": "FLAGGED",
+      "anomalyScore": 0.688,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00014",
+      "timestamp": "2026-09-10T09:31:00Z",
+      "type": "DEPOSIT",
+      "amount": 21079.16,
+      "currency": "KES",
+      "status": "PENDING",
+      "anomalyScore": 0.229,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00015",
+      "timestamp": "2026-09-10T09:38:00Z",
+      "type": "DEPOSIT",
+      "amount": 10059.06,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.913,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00016",
+      "timestamp": "2026-09-10T09:45:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 16403.19,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.915,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00017",
+      "timestamp": "2026-09-10T09:52:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 6658.76,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.561,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00018",
+      "timestamp": "2026-09-10T09:59:00Z",
+      "type": "REVERSAL",
+      "amount": 10739.42,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.362,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00019",
+      "timestamp": "2026-09-10T10:06:00Z",
+      "type": "REVERSAL",
+      "amount": 12363.22,
+      "currency": "KES",
+      "status": "PENDING",
+      "anomalyScore": 0.861,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00020",
+      "timestamp": "2026-09-10T10:13:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 19812.38,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.064,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00021",
+      "timestamp": "2026-09-10T10:20:00Z",
+      "type": "REVERSAL",
+      "amount": 24903.23,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.971,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00022",
+      "timestamp": "2026-09-10T10:27:00Z",
+      "type": "PAYMENT",
+      "amount": 17058.67,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.267,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00023",
+      "timestamp": "2026-09-10T10:34:00Z",
+      "type": "PAYMENT",
+      "amount": 7372.83,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.003,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00024",
+      "timestamp": "2026-09-10T10:41:00Z",
+      "type": "REVERSAL",
+      "amount": 19060.96,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.106,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00025",
+      "timestamp": "2026-09-10T10:48:00Z",
+      "type": "REVERSAL",
+      "amount": 15243.81,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.763,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00026",
+      "timestamp": "2026-09-10T10:55:00Z",
+      "type": "REVERSAL",
+      "amount": 8137.69,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.929,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00027",
+      "timestamp": "2026-09-10T11:02:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 1495.23,
+      "currency": "KES",
+      "status": "FLAGGED",
+      "anomalyScore": 0.947,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00028",
+      "timestamp": "2026-09-10T11:09:00Z",
+      "type": "TRANSFER",
+      "amount": 20409.78,
+      "currency": "KES",
+      "status": "FAILED",
+      "anomalyScore": 0.533,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00029",
+      "timestamp": "2026-09-10T11:16:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 16510.78,
+      "currency": "KES",
+      "status": "FAILED",
+      "anomalyScore": 0.165,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00030",
+      "timestamp": "2026-09-10T11:23:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 23226.39,
+      "currency": "KES",
+      "status": "PENDING",
+      "anomalyScore": 0.69,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00031",
+      "timestamp": "2026-09-10T11:30:00Z",
+      "type": "TRANSFER",
+      "amount": 24878.98,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.438,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00032",
+      "timestamp": "2026-09-10T11:37:00Z",
+      "type": "PAYMENT",
+      "amount": 6235.25,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.021,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00033",
+      "timestamp": "2026-09-10T11:44:00Z",
+      "type": "REVERSAL",
+      "amount": 5544.42,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.631,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00034",
+      "timestamp": "2026-09-10T11:51:00Z",
+      "type": "PAYMENT",
+      "amount": 22640.23,
+      "currency": "KES",
+      "status": "FLAGGED",
+      "anomalyScore": 0.071,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00035",
+      "timestamp": "2026-09-10T11:58:00Z",
+      "type": "DEPOSIT",
+      "amount": 16741.0,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.132,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00036",
+      "timestamp": "2026-09-10T12:05:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 19626.25,
+      "currency": "KES",
+      "status": "PENDING",
+      "anomalyScore": 0.19,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00037",
+      "timestamp": "2026-09-10T12:12:00Z",
+      "type": "TRANSFER",
+      "amount": 8889.72,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.864,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00038",
+      "timestamp": "2026-09-10T12:19:00Z",
+      "type": "PAYMENT",
+      "amount": 1562.29,
+      "currency": "KES",
+      "status": "PENDING",
+      "anomalyScore": 0.801,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00039",
+      "timestamp": "2026-09-10T12:26:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 4830.17,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.14,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00040",
+      "timestamp": "2026-09-10T12:33:00Z",
+      "type": "DEPOSIT",
+      "amount": 11592.57,
+      "currency": "KES",
+      "status": "FLAGGED",
+      "anomalyScore": 0.075,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00041",
+      "timestamp": "2026-09-10T12:40:00Z",
+      "type": "PAYMENT",
+      "amount": 16321.02,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.015,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00042",
+      "timestamp": "2026-09-10T12:47:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 4199.46,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.214,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00043",
+      "timestamp": "2026-09-10T12:54:00Z",
+      "type": "PAYMENT",
+      "amount": 4157.7,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.39,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00044",
+      "timestamp": "2026-09-10T13:01:00Z",
+      "type": "DEPOSIT",
+      "amount": 10604.04,
+      "currency": "KES",
+      "status": "FAILED",
+      "anomalyScore": 0.995,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00045",
+      "timestamp": "2026-09-10T13:08:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 4787.95,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.058,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00046",
+      "timestamp": "2026-09-10T13:15:00Z",
+      "type": "DEPOSIT",
+      "amount": 1476.27,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.503,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00047",
+      "timestamp": "2026-09-10T13:22:00Z",
+      "type": "PAYMENT",
+      "amount": 24021.43,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.186,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00048",
+      "timestamp": "2026-09-10T13:29:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 10124.2,
+      "currency": "KES",
+      "status": "FAILED",
+      "anomalyScore": 0.57,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00049",
+      "timestamp": "2026-09-10T13:36:00Z",
+      "type": "REVERSAL",
+      "amount": 2095.49,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.565,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00050",
+      "timestamp": "2026-09-10T13:43:00Z",
+      "type": "DEPOSIT",
+      "amount": 5146.27,
+      "currency": "KES",
+      "status": "PENDING",
+      "anomalyScore": 0.239,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00051",
+      "timestamp": "2026-09-10T13:50:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 16808.67,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.316,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00052",
+      "timestamp": "2026-09-10T13:57:00Z",
+      "type": "PAYMENT",
+      "amount": 11484.22,
+      "currency": "KES",
+      "status": "FAILED",
+      "anomalyScore": 0.996,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00053",
+      "timestamp": "2026-09-10T14:04:00Z",
+      "type": "REVERSAL",
+      "amount": 5368.2,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.933,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00054",
+      "timestamp": "2026-09-10T14:11:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 9269.7,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.834,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00055",
+      "timestamp": "2026-09-10T14:18:00Z",
+      "type": "REVERSAL",
+      "amount": 24597.14,
+      "currency": "KES",
+      "status": "PENDING",
+      "anomalyScore": 0.529,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00056",
+      "timestamp": "2026-09-10T14:25:00Z",
+      "type": "PAYMENT",
+      "amount": 23476.3,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.115,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00057",
+      "timestamp": "2026-09-10T14:32:00Z",
+      "type": "REVERSAL",
+      "amount": 3928.43,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.211,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00058",
+      "timestamp": "2026-09-10T14:39:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 17203.05,
+      "currency": "KES",
+      "status": "FLAGGED",
+      "anomalyScore": 0.505,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00059",
+      "timestamp": "2026-09-10T14:46:00Z",
+      "type": "PAYMENT",
+      "amount": 2352.85,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.277,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00060",
+      "timestamp": "2026-09-10T14:53:00Z",
+      "type": "DEPOSIT",
+      "amount": 19289.42,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.262,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00061",
+      "timestamp": "2026-09-10T15:00:00Z",
+      "type": "REVERSAL",
+      "amount": 17656.4,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.112,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00062",
+      "timestamp": "2026-09-10T15:07:00Z",
+      "type": "REVERSAL",
+      "amount": 948.9,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.553,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00063",
+      "timestamp": "2026-09-10T15:14:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 1093.63,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.933,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00064",
+      "timestamp": "2026-09-10T15:21:00Z",
+      "type": "DEPOSIT",
+      "amount": 5291.41,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.103,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00065",
+      "timestamp": "2026-09-10T15:28:00Z",
+      "type": "REVERSAL",
+      "amount": 18749.47,
+      "currency": "KES",
+      "status": "FLAGGED",
+      "anomalyScore": 0.237,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00066",
+      "timestamp": "2026-09-10T15:35:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 22041.33,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.737,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00067",
+      "timestamp": "2026-09-10T15:42:00Z",
+      "type": "TRANSFER",
+      "amount": 20065.77,
+      "currency": "KES",
+      "status": "FLAGGED",
+      "anomalyScore": 0.811,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00068",
+      "timestamp": "2026-09-10T15:49:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 19694.99,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.872,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00069",
+      "timestamp": "2026-09-10T15:56:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 5029.34,
+      "currency": "KES",
+      "status": "FLAGGED",
+      "anomalyScore": 0.35,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00070",
+      "timestamp": "2026-09-10T16:03:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 640.43,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.328,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00071",
+      "timestamp": "2026-09-10T16:10:00Z",
+      "type": "DEPOSIT",
+      "amount": 8811.1,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.68,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00072",
+      "timestamp": "2026-09-10T16:17:00Z",
+      "type": "PAYMENT",
+      "amount": 2927.78,
+      "currency": "KES",
+      "status": "FAILED",
+      "anomalyScore": 0.179,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00073",
+      "timestamp": "2026-09-10T16:24:00Z",
+      "type": "PAYMENT",
+      "amount": 2754.64,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.729,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00074",
+      "timestamp": "2026-09-10T16:31:00Z",
+      "type": "TRANSFER",
+      "amount": 15174.91,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.385,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00075",
+      "timestamp": "2026-09-10T16:38:00Z",
+      "type": "DEPOSIT",
+      "amount": 1157.44,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.52,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00076",
+      "timestamp": "2026-09-10T16:45:00Z",
+      "type": "DEPOSIT",
+      "amount": 10810.87,
+      "currency": "KES",
+      "status": "FAILED",
+      "anomalyScore": 0.921,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00077",
+      "timestamp": "2026-09-10T16:52:00Z",
+      "type": "PAYMENT",
+      "amount": 18007.87,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.309,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00078",
+      "timestamp": "2026-09-10T16:59:00Z",
+      "type": "DEPOSIT",
+      "amount": 10089.89,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.127,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00079",
+      "timestamp": "2026-09-10T17:06:00Z",
+      "type": "TRANSFER",
+      "amount": 16949.08,
+      "currency": "KES",
+      "status": "FLAGGED",
+      "anomalyScore": 0.616,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00080",
+      "timestamp": "2026-09-10T17:13:00Z",
+      "type": "TRANSFER",
+      "amount": 13721.03,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.287,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00081",
+      "timestamp": "2026-09-10T17:20:00Z",
+      "type": "REVERSAL",
+      "amount": 15186.21,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.442,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00082",
+      "timestamp": "2026-09-10T17:27:00Z",
+      "type": "REVERSAL",
+      "amount": 11856.0,
+      "currency": "KES",
+      "status": "FLAGGED",
+      "anomalyScore": 0.796,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00083",
+      "timestamp": "2026-09-10T17:34:00Z",
+      "type": "PAYMENT",
+      "amount": 7130.47,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.619,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00084",
+      "timestamp": "2026-09-10T17:41:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 16836.25,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.199,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00085",
+      "timestamp": "2026-09-10T17:48:00Z",
+      "type": "PAYMENT",
+      "amount": 6158.82,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.85,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00086",
+      "timestamp": "2026-09-10T17:55:00Z",
+      "type": "TRANSFER",
+      "amount": 10390.3,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.194,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00087",
+      "timestamp": "2026-09-10T18:02:00Z",
+      "type": "TRANSFER",
+      "amount": 10021.34,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.688,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00088",
+      "timestamp": "2026-09-10T18:09:00Z",
+      "type": "TRANSFER",
+      "amount": 5510.09,
+      "currency": "KES",
+      "status": "PENDING",
+      "anomalyScore": 0.696,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00089",
+      "timestamp": "2026-09-10T18:16:00Z",
+      "type": "PAYMENT",
+      "amount": 13957.27,
+      "currency": "KES",
+      "status": "FLAGGED",
+      "anomalyScore": 0.121,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00090",
+      "timestamp": "2026-09-10T18:23:00Z",
+      "type": "TRANSFER",
+      "amount": 16706.06,
+      "currency": "KES",
+      "status": "FAILED",
+      "anomalyScore": 0.595,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00091",
+      "timestamp": "2026-09-10T18:30:00Z",
+      "type": "REVERSAL",
+      "amount": 20384.41,
+      "currency": "KES",
+      "status": "FLAGGED",
+      "anomalyScore": 0.427,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00092",
+      "timestamp": "2026-09-10T18:37:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 18604.2,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.259,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00093",
+      "timestamp": "2026-09-10T18:44:00Z",
+      "type": "DEPOSIT",
+      "amount": 19157.05,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.627,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00094",
+      "timestamp": "2026-09-10T18:51:00Z",
+      "type": "TRANSFER",
+      "amount": 1983.21,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.272,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00095",
+      "timestamp": "2026-09-10T18:58:00Z",
+      "type": "REVERSAL",
+      "amount": 2060.41,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.383,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00096",
+      "timestamp": "2026-09-10T19:05:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 1652.51,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.543,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00097",
+      "timestamp": "2026-09-10T19:12:00Z",
+      "type": "PAYMENT",
+      "amount": 5210.52,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.905,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00098",
+      "timestamp": "2026-09-10T19:19:00Z",
+      "type": "REVERSAL",
+      "amount": 9540.51,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.352,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00099",
+      "timestamp": "2026-09-10T19:26:00Z",
+      "type": "TRANSFER",
+      "amount": 13478.6,
+      "currency": "KES",
+      "status": "PENDING",
+      "anomalyScore": 0.8,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00100",
+      "timestamp": "2026-09-10T19:33:00Z",
+      "type": "TRANSFER",
+      "amount": 5524.57,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.029,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00101",
+      "timestamp": "2026-09-10T19:40:00Z",
+      "type": "TRANSFER",
+      "amount": 18118.33,
+      "currency": "KES",
+      "status": "PENDING",
+      "anomalyScore": 0.92,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00102",
+      "timestamp": "2026-09-10T19:47:00Z",
+      "type": "TRANSFER",
+      "amount": 14817.72,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.084,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00103",
+      "timestamp": "2026-09-10T19:54:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 21677.94,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.26,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00104",
+      "timestamp": "2026-09-10T20:01:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 11394.75,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.88,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00105",
+      "timestamp": "2026-09-10T20:08:00Z",
+      "type": "TRANSFER",
+      "amount": 6344.17,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.019,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00106",
+      "timestamp": "2026-09-10T20:15:00Z",
+      "type": "DEPOSIT",
+      "amount": 5644.34,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.957,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00107",
+      "timestamp": "2026-09-10T20:22:00Z",
+      "type": "PAYMENT",
+      "amount": 23742.81,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.02,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00108",
+      "timestamp": "2026-09-10T20:29:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 3199.21,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.564,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00109",
+      "timestamp": "2026-09-10T20:36:00Z",
+      "type": "TRANSFER",
+      "amount": 17501.65,
+      "currency": "KES",
+      "status": "PENDING",
+      "anomalyScore": 0.168,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00110",
+      "timestamp": "2026-09-10T20:43:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 24119.78,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.026,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00111",
+      "timestamp": "2026-09-10T20:50:00Z",
+      "type": "REVERSAL",
+      "amount": 16949.81,
+      "currency": "KES",
+      "status": "FAILED",
+      "anomalyScore": 0.397,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00112",
+      "timestamp": "2026-09-10T20:57:00Z",
+      "type": "PAYMENT",
+      "amount": 14822.84,
+      "currency": "KES",
+      "status": "PENDING",
+      "anomalyScore": 0.243,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00113",
+      "timestamp": "2026-09-10T21:04:00Z",
+      "type": "REVERSAL",
+      "amount": 20147.92,
+      "currency": "KES",
+      "status": "PENDING",
+      "anomalyScore": 0.566,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00114",
+      "timestamp": "2026-09-10T21:11:00Z",
+      "type": "DEPOSIT",
+      "amount": 13341.99,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.069,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00115",
+      "timestamp": "2026-09-10T21:18:00Z",
+      "type": "PAYMENT",
+      "amount": 21246.91,
+      "currency": "KES",
+      "status": "PENDING",
+      "anomalyScore": 0.106,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00116",
+      "timestamp": "2026-09-10T21:25:00Z",
+      "type": "TRANSFER",
+      "amount": 17697.35,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.734,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00117",
+      "timestamp": "2026-09-10T21:32:00Z",
+      "type": "REVERSAL",
+      "amount": 20214.57,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.483,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00118",
+      "timestamp": "2026-09-10T21:39:00Z",
+      "type": "REVERSAL",
+      "amount": 6746.47,
+      "currency": "KES",
+      "status": "FLAGGED",
+      "anomalyScore": 0.831,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00119",
+      "timestamp": "2026-09-10T21:46:00Z",
+      "type": "DEPOSIT",
+      "amount": 22046.7,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.465,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00120",
+      "timestamp": "2026-09-10T21:53:00Z",
+      "type": "DEPOSIT",
+      "amount": 766.06,
+      "currency": "KES",
+      "status": "FLAGGED",
+      "anomalyScore": 0.182,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00121",
+      "timestamp": "2026-09-10T22:00:00Z",
+      "type": "DEPOSIT",
+      "amount": 19955.92,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.88,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00122",
+      "timestamp": "2026-09-10T22:07:00Z",
+      "type": "REVERSAL",
+      "amount": 303.27,
+      "currency": "KES",
+      "status": "FAILED",
+      "anomalyScore": 0.086,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00123",
+      "timestamp": "2026-09-10T22:14:00Z",
+      "type": "TRANSFER",
+      "amount": 13901.65,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.476,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00124",
+      "timestamp": "2026-09-10T22:21:00Z",
+      "type": "TRANSFER",
+      "amount": 19833.68,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.222,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00125",
+      "timestamp": "2026-09-10T22:28:00Z",
+      "type": "DEPOSIT",
+      "amount": 16615.8,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.553,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00126",
+      "timestamp": "2026-09-10T22:35:00Z",
+      "type": "TRANSFER",
+      "amount": 24915.96,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.352,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00127",
+      "timestamp": "2026-09-10T22:42:00Z",
+      "type": "DEPOSIT",
+      "amount": 7700.24,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.721,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00128",
+      "timestamp": "2026-09-10T22:49:00Z",
+      "type": "PAYMENT",
+      "amount": 18584.88,
+      "currency": "KES",
+      "status": "FAILED",
+      "anomalyScore": 0.69,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00129",
+      "timestamp": "2026-09-10T22:56:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 18478.19,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.59,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00130",
+      "timestamp": "2026-09-10T23:03:00Z",
+      "type": "PAYMENT",
+      "amount": 20824.08,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.361,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00131",
+      "timestamp": "2026-09-10T23:10:00Z",
+      "type": "PAYMENT",
+      "amount": 17715.06,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.046,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00132",
+      "timestamp": "2026-09-10T23:17:00Z",
+      "type": "REVERSAL",
+      "amount": 7338.81,
+      "currency": "KES",
+      "status": "FAILED",
+      "anomalyScore": 0.638,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00133",
+      "timestamp": "2026-09-10T23:24:00Z",
+      "type": "PAYMENT",
+      "amount": 21824.36,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.469,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00134",
+      "timestamp": "2026-09-10T23:31:00Z",
+      "type": "DEPOSIT",
+      "amount": 4649.87,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.941,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00135",
+      "timestamp": "2026-09-10T23:38:00Z",
+      "type": "PAYMENT",
+      "amount": 20561.79,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.074,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00136",
+      "timestamp": "2026-09-10T23:45:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 3772.48,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.304,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00137",
+      "timestamp": "2026-09-10T23:52:00Z",
+      "type": "PAYMENT",
+      "amount": 13973.92,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.596,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00138",
+      "timestamp": "2026-09-10T23:59:00Z",
+      "type": "REVERSAL",
+      "amount": 9540.43,
+      "currency": "KES",
+      "status": "FLAGGED",
+      "anomalyScore": 0.297,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00139",
+      "timestamp": "2026-09-11T00:06:00Z",
+      "type": "DEPOSIT",
+      "amount": 14237.31,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.96,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00140",
+      "timestamp": "2026-09-11T00:13:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 15656.6,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.081,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00141",
+      "timestamp": "2026-09-11T00:20:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 13822.21,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.409,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00142",
+      "timestamp": "2026-09-11T00:27:00Z",
+      "type": "DEPOSIT",
+      "amount": 864.36,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.283,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00143",
+      "timestamp": "2026-09-11T00:34:00Z",
+      "type": "PAYMENT",
+      "amount": 17200.25,
+      "currency": "KES",
+      "status": "FLAGGED",
+      "anomalyScore": 0.788,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00144",
+      "timestamp": "2026-09-11T00:41:00Z",
+      "type": "TRANSFER",
+      "amount": 2913.67,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.149,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00145",
+      "timestamp": "2026-09-11T00:48:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 1831.68,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.308,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00146",
+      "timestamp": "2026-09-11T00:55:00Z",
+      "type": "TRANSFER",
+      "amount": 3152.62,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.7,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00147",
+      "timestamp": "2026-09-11T01:02:00Z",
+      "type": "REVERSAL",
+      "amount": 13522.54,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.598,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00148",
+      "timestamp": "2026-09-11T01:09:00Z",
+      "type": "DEPOSIT",
+      "amount": 15112.66,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.229,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00149",
+      "timestamp": "2026-09-11T01:16:00Z",
+      "type": "DEPOSIT",
+      "amount": 14427.36,
+      "currency": "KES",
+      "status": "PENDING",
+      "anomalyScore": 0.175,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00150",
+      "timestamp": "2026-09-11T01:23:00Z",
+      "type": "DEPOSIT",
+      "amount": 4578.15,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.635,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00151",
+      "timestamp": "2026-09-11T01:30:00Z",
+      "type": "PAYMENT",
+      "amount": 11776.76,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.321,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00152",
+      "timestamp": "2026-09-11T01:37:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 8278.6,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.288,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00153",
+      "timestamp": "2026-09-11T01:44:00Z",
+      "type": "REVERSAL",
+      "amount": 965.59,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.252,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00154",
+      "timestamp": "2026-09-11T01:51:00Z",
+      "type": "TRANSFER",
+      "amount": 21629.52,
+      "currency": "KES",
+      "status": "PENDING",
+      "anomalyScore": 0.001,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00155",
+      "timestamp": "2026-09-11T01:58:00Z",
+      "type": "TRANSFER",
+      "amount": 1402.39,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.623,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00156",
+      "timestamp": "2026-09-11T02:05:00Z",
+      "type": "TRANSFER",
+      "amount": 19011.76,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.549,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00157",
+      "timestamp": "2026-09-11T02:12:00Z",
+      "type": "TRANSFER",
+      "amount": 22027.12,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.029,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00158",
+      "timestamp": "2026-09-11T02:19:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 7803.22,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.408,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00159",
+      "timestamp": "2026-09-11T02:26:00Z",
+      "type": "PAYMENT",
+      "amount": 11563.12,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.832,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00160",
+      "timestamp": "2026-09-11T02:33:00Z",
+      "type": "DEPOSIT",
+      "amount": 12746.36,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.835,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00161",
+      "timestamp": "2026-09-11T02:40:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 11446.82,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.191,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00162",
+      "timestamp": "2026-09-11T02:47:00Z",
+      "type": "PAYMENT",
+      "amount": 6942.37,
+      "currency": "KES",
+      "status": "PENDING",
+      "anomalyScore": 0.415,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00163",
+      "timestamp": "2026-09-11T02:54:00Z",
+      "type": "PAYMENT",
+      "amount": 7106.83,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.587,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00164",
+      "timestamp": "2026-09-11T03:01:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 11191.36,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.332,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00165",
+      "timestamp": "2026-09-11T03:08:00Z",
+      "type": "TRANSFER",
+      "amount": 23324.66,
+      "currency": "KES",
+      "status": "FLAGGED",
+      "anomalyScore": 0.981,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00166",
+      "timestamp": "2026-09-11T03:15:00Z",
+      "type": "REVERSAL",
+      "amount": 9605.12,
+      "currency": "KES",
+      "status": "FLAGGED",
+      "anomalyScore": 0.411,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00167",
+      "timestamp": "2026-09-11T03:22:00Z",
+      "type": "TRANSFER",
+      "amount": 17645.44,
+      "currency": "KES",
+      "status": "PENDING",
+      "anomalyScore": 0.386,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00168",
+      "timestamp": "2026-09-11T03:29:00Z",
+      "type": "TRANSFER",
+      "amount": 24122.37,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.965,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00169",
+      "timestamp": "2026-09-11T03:36:00Z",
+      "type": "PAYMENT",
+      "amount": 21861.05,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.526,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00170",
+      "timestamp": "2026-09-11T03:43:00Z",
+      "type": "PAYMENT",
+      "amount": 18074.97,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.655,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00171",
+      "timestamp": "2026-09-11T03:50:00Z",
+      "type": "PAYMENT",
+      "amount": 11763.79,
+      "currency": "KES",
+      "status": "FAILED",
+      "anomalyScore": 0.339,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00172",
+      "timestamp": "2026-09-11T03:57:00Z",
+      "type": "PAYMENT",
+      "amount": 21301.54,
+      "currency": "KES",
+      "status": "FLAGGED",
+      "anomalyScore": 0.859,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00173",
+      "timestamp": "2026-09-11T04:04:00Z",
+      "type": "DEPOSIT",
+      "amount": 15688.64,
+      "currency": "KES",
+      "status": "FLAGGED",
+      "anomalyScore": 0.488,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00174",
+      "timestamp": "2026-09-11T04:11:00Z",
+      "type": "REVERSAL",
+      "amount": 1757.1,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.921,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00175",
+      "timestamp": "2026-09-11T04:18:00Z",
+      "type": "PAYMENT",
+      "amount": 10877.59,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.634,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00176",
+      "timestamp": "2026-09-11T04:25:00Z",
+      "type": "TRANSFER",
+      "amount": 4200.8,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.029,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00177",
+      "timestamp": "2026-09-11T04:32:00Z",
+      "type": "PAYMENT",
+      "amount": 7369.53,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.146,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00178",
+      "timestamp": "2026-09-11T04:39:00Z",
+      "type": "REVERSAL",
+      "amount": 17060.92,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.175,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00179",
+      "timestamp": "2026-09-11T04:46:00Z",
+      "type": "REVERSAL",
+      "amount": 17094.21,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.583,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00180",
+      "timestamp": "2026-09-11T04:53:00Z",
+      "type": "TRANSFER",
+      "amount": 15965.72,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.667,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00181",
+      "timestamp": "2026-09-11T05:00:00Z",
+      "type": "DEPOSIT",
+      "amount": 16956.39,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.442,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00182",
+      "timestamp": "2026-09-11T05:07:00Z",
+      "type": "REVERSAL",
+      "amount": 7513.9,
+      "currency": "KES",
+      "status": "FAILED",
+      "anomalyScore": 0.69,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00183",
+      "timestamp": "2026-09-11T05:14:00Z",
+      "type": "DEPOSIT",
+      "amount": 5020.46,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.483,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00184",
+      "timestamp": "2026-09-11T05:21:00Z",
+      "type": "TRANSFER",
+      "amount": 14319.47,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.993,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00185",
+      "timestamp": "2026-09-11T05:28:00Z",
+      "type": "PAYMENT",
+      "amount": 24449.71,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.274,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00186",
+      "timestamp": "2026-09-11T05:35:00Z",
+      "type": "REVERSAL",
+      "amount": 18642.05,
+      "currency": "KES",
+      "status": "PENDING",
+      "anomalyScore": 0.903,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00187",
+      "timestamp": "2026-09-11T05:42:00Z",
+      "type": "REVERSAL",
+      "amount": 20058.2,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.19,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00188",
+      "timestamp": "2026-09-11T05:49:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 15724.79,
+      "currency": "KES",
+      "status": "FLAGGED",
+      "anomalyScore": 0.646,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00189",
+      "timestamp": "2026-09-11T05:56:00Z",
+      "type": "TRANSFER",
+      "amount": 882.45,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.131,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00190",
+      "timestamp": "2026-09-11T06:03:00Z",
+      "type": "DEPOSIT",
+      "amount": 18699.65,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.132,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00191",
+      "timestamp": "2026-09-11T06:10:00Z",
+      "type": "REVERSAL",
+      "amount": 12569.78,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.165,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00192",
+      "timestamp": "2026-09-11T06:17:00Z",
+      "type": "DEPOSIT",
+      "amount": 18676.66,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.115,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00193",
+      "timestamp": "2026-09-11T06:24:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 18866.08,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.676,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00194",
+      "timestamp": "2026-09-11T06:31:00Z",
+      "type": "REVERSAL",
+      "amount": 9176.09,
+      "currency": "KES",
+      "status": "PENDING",
+      "anomalyScore": 0.014,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00195",
+      "timestamp": "2026-09-11T06:38:00Z",
+      "type": "TRANSFER",
+      "amount": 9246.21,
+      "currency": "KES",
+      "status": "PENDING",
+      "anomalyScore": 0.262,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00196",
+      "timestamp": "2026-09-11T06:45:00Z",
+      "type": "DEPOSIT",
+      "amount": 2753.24,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.025,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00197",
+      "timestamp": "2026-09-11T06:52:00Z",
+      "type": "REVERSAL",
+      "amount": 5573.11,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.824,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00198",
+      "timestamp": "2026-09-11T06:59:00Z",
+      "type": "TRANSFER",
+      "amount": 2961.06,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.037,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00199",
+      "timestamp": "2026-09-11T07:06:00Z",
+      "type": "PAYMENT",
+      "amount": 2474.94,
+      "currency": "KES",
+      "status": "FLAGGED",
+      "anomalyScore": 0.136,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00200",
+      "timestamp": "2026-09-11T07:13:00Z",
+      "type": "DEPOSIT",
+      "amount": 16778.63,
+      "currency": "KES",
+      "status": "PENDING",
+      "anomalyScore": 0.946,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00201",
+      "timestamp": "2026-09-11T07:20:00Z",
+      "type": "REVERSAL",
+      "amount": 18569.61,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.415,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00202",
+      "timestamp": "2026-09-11T07:27:00Z",
+      "type": "TRANSFER",
+      "amount": 15410.52,
+      "currency": "KES",
+      "status": "FAILED",
+      "anomalyScore": 0.28,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00203",
+      "timestamp": "2026-09-11T07:34:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 11112.41,
+      "currency": "KES",
+      "status": "FAILED",
+      "anomalyScore": 0.855,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00204",
+      "timestamp": "2026-09-11T07:41:00Z",
+      "type": "DEPOSIT",
+      "amount": 13634.42,
+      "currency": "KES",
+      "status": "FAILED",
+      "anomalyScore": 0.359,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00205",
+      "timestamp": "2026-09-11T07:48:00Z",
+      "type": "DEPOSIT",
+      "amount": 4785.72,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.848,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00206",
+      "timestamp": "2026-09-11T07:55:00Z",
+      "type": "PAYMENT",
+      "amount": 16586.08,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.597,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00207",
+      "timestamp": "2026-09-11T08:02:00Z",
+      "type": "PAYMENT",
+      "amount": 19680.53,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.126,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00208",
+      "timestamp": "2026-09-11T08:09:00Z",
+      "type": "PAYMENT",
+      "amount": 20753.96,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.586,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00209",
+      "timestamp": "2026-09-11T08:16:00Z",
+      "type": "DEPOSIT",
+      "amount": 19370.5,
+      "currency": "KES",
+      "status": "PENDING",
+      "anomalyScore": 0.596,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00210",
+      "timestamp": "2026-09-11T08:23:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 24688.81,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.799,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00211",
+      "timestamp": "2026-09-11T08:30:00Z",
+      "type": "PAYMENT",
+      "amount": 3338.49,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.788,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00212",
+      "timestamp": "2026-09-11T08:37:00Z",
+      "type": "PAYMENT",
+      "amount": 4397.44,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.742,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00213",
+      "timestamp": "2026-09-11T08:44:00Z",
+      "type": "PAYMENT",
+      "amount": 11932.34,
+      "currency": "KES",
+      "status": "PENDING",
+      "anomalyScore": 0.513,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00214",
+      "timestamp": "2026-09-11T08:51:00Z",
+      "type": "TRANSFER",
+      "amount": 12620.78,
+      "currency": "KES",
+      "status": "FAILED",
+      "anomalyScore": 0.043,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00215",
+      "timestamp": "2026-09-11T08:58:00Z",
+      "type": "TRANSFER",
+      "amount": 16101.35,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.999,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00216",
+      "timestamp": "2026-09-11T09:05:00Z",
+      "type": "TRANSFER",
+      "amount": 17168.13,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.91,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00217",
+      "timestamp": "2026-09-11T09:12:00Z",
+      "type": "PAYMENT",
+      "amount": 8086.69,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.126,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00218",
+      "timestamp": "2026-09-11T09:19:00Z",
+      "type": "TRANSFER",
+      "amount": 24865.96,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.454,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00219",
+      "timestamp": "2026-09-11T09:26:00Z",
+      "type": "PAYMENT",
+      "amount": 19837.75,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.655,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00220",
+      "timestamp": "2026-09-11T09:33:00Z",
+      "type": "TRANSFER",
+      "amount": 11316.3,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.339,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00221",
+      "timestamp": "2026-09-11T09:40:00Z",
+      "type": "TRANSFER",
+      "amount": 10428.94,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.427,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00222",
+      "timestamp": "2026-09-11T09:47:00Z",
+      "type": "DEPOSIT",
+      "amount": 23842.13,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.474,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00223",
+      "timestamp": "2026-09-11T09:54:00Z",
+      "type": "PAYMENT",
+      "amount": 2376.09,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.739,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00224",
+      "timestamp": "2026-09-11T10:01:00Z",
+      "type": "REVERSAL",
+      "amount": 1546.53,
+      "currency": "KES",
+      "status": "FAILED",
+      "anomalyScore": 0.562,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00225",
+      "timestamp": "2026-09-11T10:08:00Z",
+      "type": "TRANSFER",
+      "amount": 8872.27,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.75,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00226",
+      "timestamp": "2026-09-11T10:15:00Z",
+      "type": "DEPOSIT",
+      "amount": 15030.23,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.578,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00227",
+      "timestamp": "2026-09-11T10:22:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 16435.57,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.108,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00228",
+      "timestamp": "2026-09-11T10:29:00Z",
+      "type": "PAYMENT",
+      "amount": 19077.01,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.807,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00229",
+      "timestamp": "2026-09-11T10:36:00Z",
+      "type": "REVERSAL",
+      "amount": 23230.65,
+      "currency": "KES",
+      "status": "PENDING",
+      "anomalyScore": 0.267,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00230",
+      "timestamp": "2026-09-11T10:43:00Z",
+      "type": "DEPOSIT",
+      "amount": 17582.33,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.34,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00231",
+      "timestamp": "2026-09-11T10:50:00Z",
+      "type": "WITHDRAWAL",
+      "amount": 21753.07,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.401,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00232",
+      "timestamp": "2026-09-11T10:57:00Z",
+      "type": "PAYMENT",
+      "amount": 2339.35,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.376,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00233",
+      "timestamp": "2026-09-11T11:04:00Z",
+      "type": "DEPOSIT",
+      "amount": 3977.36,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.324,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00234",
+      "timestamp": "2026-09-11T11:11:00Z",
+      "type": "PAYMENT",
+      "amount": 3931.72,
+      "currency": "KES",
+      "status": "PENDING",
+      "anomalyScore": 0.05,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00235",
+      "timestamp": "2026-09-11T11:18:00Z",
+      "type": "DEPOSIT",
+      "amount": 11105.67,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.607,
+      "channel": "AGENT"
+    },
+    {
+      "id": "DEMO-00236",
+      "timestamp": "2026-09-11T11:25:00Z",
+      "type": "DEPOSIT",
+      "amount": 5428.45,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.345,
+      "channel": "USSD"
+    },
+    {
+      "id": "DEMO-00237",
+      "timestamp": "2026-09-11T11:32:00Z",
+      "type": "DEPOSIT",
+      "amount": 16971.54,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.527,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00238",
+      "timestamp": "2026-09-11T11:39:00Z",
+      "type": "PAYMENT",
+      "amount": 5551.93,
+      "currency": "KES",
+      "status": "FAILED",
+      "anomalyScore": 0.055,
+      "channel": "APP"
+    },
+    {
+      "id": "DEMO-00239",
+      "timestamp": "2026-09-11T11:46:00Z",
+      "type": "DEPOSIT",
+      "amount": 23635.84,
+      "currency": "KES",
+      "status": "PENDING",
+      "anomalyScore": 0.764,
+      "channel": "API"
+    },
+    {
+      "id": "DEMO-00240",
+      "timestamp": "2026-09-11T11:53:00Z",
+      "type": "DEPOSIT",
+      "amount": 3043.61,
+      "currency": "KES",
+      "status": "SETTLED",
+      "anomalyScore": 0.431,
+      "channel": "APP"
+    }
+  ]
+}

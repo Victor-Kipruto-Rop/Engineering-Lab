@@ -1,0 +1,136 @@
+{
+  "systems": [
+    {
+      "id": "pesaguard",
+      "name": "PesaGuard",
+      "category": "FinTech / Data Engineering",
+      "tagline": "Real-time M-Pesa transaction reconciliation and anomaly detection.",
+      "status": "ACTIVE",
+      "technologies": ["Python", "FastAPI", "PostgreSQL", "Kafka", "Docker"],
+      "description": "A reconciliation and anomaly-detection platform built on the M-Pesa/Daraja API. Ingests transaction webhooks, reconciles them against ledger state, and flags discrepancies in near real time. Running with one pilot customer.",
+      "features": {
+        "architecture": true,
+        "monitor": true,
+        "data": true,
+        "api": true,
+        "code": true,
+        "caseStudy": true
+      },
+      "github": "https://github.com/Victor-Kipruto-Rop",
+      "metrics": {
+        "throughput": "~66,000 rows/sec (load test)",
+        "environment": "Pilot production"
+      }
+    },
+    {
+      "id": "streaming-fraud",
+      "name": "Real-Time Transaction Streaming",
+      "category": "Streaming / Fraud Detection",
+      "tagline": "Kafka-based streaming pipeline with exactly-once semantics.",
+      "status": "ACTIVE",
+      "technologies": ["Kafka", "Python", "Plotly", "Docker"],
+      "description": "Streams transaction events through Kafka with exactly-once delivery guarantees, feeding a fraud-scoring consumer and a Plotly-based live view of throughput and anomaly rates.",
+      "features": {
+        "architecture": true,
+        "monitor": true,
+        "data": true,
+        "api": false,
+        "code": true,
+        "caseStudy": false
+      },
+      "github": "https://github.com/Victor-Kipruto-Rop",
+      "metrics": {
+        "throughput": "Demo dataset",
+        "environment": "Local / Docker Compose"
+      }
+    },
+    {
+      "id": "lakehouse",
+      "name": "Medallion Lakehouse Platform",
+      "category": "Data Platform",
+      "tagline": "Bronze/Silver/Gold lakehouse with SCD Type 2 dimensions.",
+      "status": "DEMO",
+      "technologies": ["SQL", "Python", "PostgreSQL"],
+      "description": "A multi-tier data lake following the medallion architecture, with slowly changing dimension (SCD Type 2) handling and recursive CTEs for hierarchical reporting.",
+      "features": {
+        "architecture": true,
+        "monitor": false,
+        "data": true,
+        "api": false,
+        "code": true,
+        "caseStudy": false
+      },
+      "github": "https://github.com/Victor-Kipruto-Rop",
+      "metrics": {
+        "throughput": "N/A",
+        "environment": "Local"
+      }
+    },
+    {
+      "id": "cloud-etl",
+      "name": "Cloud ETL Ingestion Pipeline",
+      "category": "Cloud / ETL",
+      "tagline": "Large-scale ingestion pipeline with significant runtime reduction.",
+      "status": "ACTIVE",
+      "technologies": ["Python", "Pandas", "SQLAlchemy", "Grafana"],
+      "description": "An ETL pipeline for market data ingestion, using Pandas and SQLAlchemy for transformation and load, with Grafana dashboards for pipeline health and full test coverage.",
+      "features": {
+        "architecture": true,
+        "monitor": true,
+        "data": true,
+        "api": false,
+        "code": true,
+        "caseStudy": false
+      },
+      "github": "https://github.com/Victor-Kipruto-Rop",
+      "metrics": {
+        "throughput": "Reduced processing time vs. baseline",
+        "environment": "Cloud"
+      }
+    },
+    {
+      "id": "mpesa-airflow",
+      "name": "M-Pesa Airflow Transaction Pipeline",
+      "category": "Data Engineering",
+      "tagline": "Config-driven rule engine orchestrated with Airflow.",
+      "status": "EXPERIMENTAL",
+      "technologies": ["Airflow", "Python", "Faker", "Docker Compose"],
+      "description": "A Faker-driven simulation pipeline for M-Pesa-style transactions, orchestrated with Airflow DAGs and a configurable rule engine for transaction classification.",
+      "features": {
+        "architecture": false,
+        "monitor": false,
+        "data": true,
+        "api": false,
+        "code": true,
+        "caseStudy": false
+      },
+      "github": "https://github.com/Victor-Kipruto-Rop",
+      "metrics": {
+        "throughput": "Simulated dataset",
+        "environment": "Docker Compose"
+      }
+    },
+    {
+      "id": "sql-pipeline",
+      "name": "End-to-End SQL Pipeline Portfolio",
+      "category": "Analytics",
+      "tagline": "SCD Type 2 modeling with recursive CTE reporting.",
+      "status": "ARCHIVED",
+      "technologies": ["SQL", "PostgreSQL"],
+      "description": "A portfolio of SQL pipelines demonstrating dimensional modeling, SCD Type 2 history tracking, and recursive CTEs for org-hierarchy and running-total reports.",
+      "features": {
+        "architecture": false,
+        "monitor": false,
+        "data": true,
+        "api": false,
+        "code": true,
+        "caseStudy": false
+      },
+      "github": "https://github.com/Victor-Kipruto-Rop",
+      "metrics": {
+        "throughput": "N/A",
+        "environment": "Local"
+      }
+    }
+  ]
+}
