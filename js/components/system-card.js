@@ -18,31 +18,16 @@ export function statusClass(status) {
 }
 
 /**
- * Pick the primary action for a card based on what artifacts the system
- * actually has (per its `features` flags), rather than always pointing at
- * the architecture page regardless of whether one exists for that system.
- * This is what keeps a card from linking to a diagram that isn't there.
+ * Every card's primary action now goes to the system detail page, which
+ * itself links out to whichever artifacts (architecture, data, API, code,
+ * experiments, case study) actually exist for that system. This replaced an
+ * earlier per-feature branch that pointed cards at different pages
+ * depending on what was available — that meant a card without an
+ * architecture diagram silently linked into the systems registry instead,
+ * which was inconsistent and easy to misread as "nothing is available here".
  */
 function primaryAction(sys, basePath) {
-  if (sys.features.architecture) {
-    return { href: `${basePath}architecture.html?system=${encodeURIComponent(sys.id)}`, label: 'Inspect architecture' };
-  }
-  if (sys.features.caseStudy) {
-    return { href: `${basePath}case-studies.html`, label: 'Read case study' };
-  }
-  if (sys.features.data) {
-    return { href: `${basePath}data.html`, label: 'Explore data' };
-  }
-  if (sys.features.code) {
-    return { href: `${basePath}code.html`, label: 'View code' };
-  }
-  if (sys.features.api) {
-    return { href: `${basePath}api-playground.html`, label: 'Try API' };
-  }
-  if (sys.features.monitor) {
-    return { href: `${basePath}monitor.html`, label: 'View monitor' };
-  }
-  return null;
+  return { href: `${basePath}system.html?system=${encodeURIComponent(sys.id)}`, label: 'View details' };
 }
 
 /**

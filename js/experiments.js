@@ -1,4 +1,5 @@
 import { escapeHTML } from './app.js';
+import { EXPERIMENTS } from './content/experiments-data.js';
 
 // Every experiment has: id, title, date, status (PASS | FAIL), hypothesis,
 // environment, configuration, method, conclusion.
@@ -6,95 +7,6 @@ import { escapeHTML } from './app.js';
 // FAIL experiments additionally have: expected, actual, rootCause, fix,
 // retestResult, retestStatus (PASS | MITIGATED) — because "fixed" and
 // "the risk is now bounded but not eliminated" are different, honest outcomes.
-const EXPERIMENTS = [
-  {
-    id: 'EXP-001',
-    title: 'PostgreSQL write load test',
-    date: '2026-05-12',
-    status: 'PASS',
-    hypothesis: 'The reconciliation schema can sustain multi-tenant write throughput above 50,000 rows/sec without connection pool exhaustion.',
-    environment: 'Local Docker Compose, PostgreSQL 16, 8 concurrent writer processes.',
-    configuration: '100 simulated tenants, batched inserts of 500 rows, connection pool size 20.',
-    method: 'Writers ran concurrently until 1,000,000 total rows were committed. Throughput was measured as total rows divided by wall-clock time; a read probe queried tenant totals mid-run to confirm the table remained queryable under load.',
-    results: '~66,000 rows/sec sustained write throughput. Read probe returned in under 200ms throughout the run. No connection pool exhaustion observed.',
-    observations: 'Throughput was steady rather than degrading over the run, suggesting the bottleneck was writer-side batching rather than the database itself at this scale.',
-    conclusion: 'PASS. The schema and indexing strategy hold up well past the 50K rows/sec target at this tenant count; a partial index (see Code page) kept read latency stable during writes.'
-  },
-  {
-    id: 'EXP-002',
-    title: 'Kafka consumer throughput',
-    date: '2026-05-28',
-    status: 'PASS',
-    hypothesis: 'Manual offset commits (vs. auto-commit) will reduce throughput by a measurable but acceptable margin, in exchange for at-least-once safety.',
-    environment: 'Local Docker Compose, single-broker Kafka 3.6, one consumer group.',
-    configuration: 'Manual commit after each successful downstream write, batch size 1.',
-    method: 'Compared events/sec between auto-commit and manual-commit configurations over a 5-minute run with identical synthetic event volume.',
-    results: 'Manual commit processed approximately 18% fewer events/sec than auto-commit in this configuration.',
-    observations: 'Batching commits (rather than committing per-message) recovered most of the throughput gap without giving up the safety property.',
-    conclusion: 'PASS with a caveat: switched to committing every 50 messages or every 2 seconds, whichever comes first, rather than per-message commits. That batching trade-off resurfaces in EXP-006.'
-  },
-  {
-    id: 'EXP-003',
-    title: 'Webhook retry storm',
-    date: '2026-06-10',
-    status: 'FAIL',
-    retestStatus: 'PASS',
-    hypothesis: 'The idempotency guard alone is sufficient to keep duplicate webhook retries from producing duplicate ledger entries, even under high concurrent retry volume.',
-    environment: 'Local Docker Compose, simulated Safaricom-style retry storm.',
-    configuration: 'The same webhook resent up to 5 times within a 2-second window, across 50 concurrent transactions, with no rate limiting in front of the ingestion endpoint.',
-    method: 'Replayed each transaction\u2019s webhook 5 times concurrently, then checked the processed_events table and ledger for duplicate writes.',
-    expected: 'The idempotency table\u2019s pre-check (SELECT \u2026 FOR UPDATE before insert) would absorb every duplicate as a fast no-op.',
-    actual: 'Under concurrent duplicate delivery, several requests raced past the pre-check before the first request\u2019s insert had committed, producing a handful of duplicate ledger writes despite the guard.',
-    rootCause: 'The check and the insert were in the same transaction, but two separate transactions could each pass the SELECT before either committed \u2014 a check-then-act race that row locking within a single transaction doesn\u2019t prevent across concurrent transactions.',
-    fix: 'Added a unique constraint on processed_events.event_id itself, so a duplicate insert fails at the database level and is caught in application code, rather than relying on the pre-check to catch it first.',
-    retestResult: 'Reran the same 5x/50-transaction retry storm three times; zero duplicate ledger entries in any run.',
-    conclusion: 'FAIL \u2192 FIXED. The application-level pre-check wasn\u2019t sufficient under concurrency; the actual safety net had to be a database constraint.'
-  },
-  {
-    id: 'EXP-004',
-    title: 'DLQ recovery drill',
-    date: '2026-06-20',
-    status: 'PASS',
-    hypothesis: 'Events routed to the dead-letter topic can be replayed into the main pipeline without manual schema translation.',
-    environment: 'Local Docker Compose.',
-    configuration: 'Injected malformed payloads (missing required fields) to force DLQ routing, then attempted replay after a fix.',
-    method: 'Fixed the payloads programmatically based on the recorded validation errors, republished to the main topic, and confirmed downstream processing completed.',
-    results: 'All replayed events processed successfully with no duplicate ledger entries, due to the idempotency guard hardened in EXP-003.',
-    observations: 'The idempotency check (keyed on event ID) meant replay safety came for free from a mechanism built for a different reason (webhook retries).',
-    conclusion: 'PASS. DLQ replay is safe as a manual remediation step; no automated replay was built since volume did not justify it yet.'
-  },
-  {
-    id: 'EXP-005',
-    title: 'Reconciliation accuracy check',
-    date: '2026-07-08',
-    status: 'PASS',
-    hypothesis: 'The set-difference reconciliation query correctly identifies all injected discrepancies with zero false negatives.',
-    environment: 'Local PostgreSQL with a seeded dataset.',
-    configuration: 'Seeded 10,000 ledger entries with 40 deliberately unmatched entries (missing transaction, timing mismatch, duplicate).',
-    method: 'Ran the reconciliation query against the seeded dataset and compared flagged rows against the known-injected discrepancy list.',
-    results: 'All 40 injected discrepancies were correctly flagged. Zero false positives on the remaining 9,960 matched entries.',
-    observations: 'The 24-hour rolling window in the query means discrepancies older than 24 hours would be missed by this specific query; a separate nightly full-window job covers that case.',
-    conclusion: 'PASS for the intended near-real-time window. Documented the window limitation rather than treating this run as validating unlimited-history reconciliation.'
-  },
-  {
-    id: 'EXP-006',
-    title: 'Consumer rebalance during rolling deploy',
-    date: '2026-08-02',
-    status: 'FAIL',
-    retestStatus: 'MITIGATED',
-    hypothesis: 'A rolling deployment of the fraud-scoring consumer will not cause any transaction event to be scored more than once.',
-    environment: 'Local Docker Compose, 3-partition Kafka topic, 2 consumer instances in one group, restarted one at a time.',
-    configuration: 'A continuous synthetic event stream at ~200 events/sec during a simulated rolling restart of both consumers, 30 seconds apart.',
-    method: 'Tagged every event with a sequence number before publishing, then compared the sequence numbers seen by the scoring function against what was published, looking for gaps or repeats.',
-    expected: 'The batched manual commits from EXP-002 (every 50 messages or 2 seconds) would let a restarted consumer resume exactly where it left off.',
-    actual: 'During the rebalance window, roughly 40 events already scored by the outgoing consumer were re-delivered to the incoming consumer and scored a second time, because the restart happened mid-batch, before those offsets were committed.',
-    rootCause: 'The batching interval introduced in EXP-002 to fix a throughput regression directly reintroduced a duplicate-delivery window \u2014 just one that only appears during a rebalance, not during steady-state processing.',
-    fix: 'Fraud scoring itself reads and writes only derived, non-financial state, so a rescored duplicate is not on its own harmful. Reconciliation-triggering actions downstream of scoring were routed through the same idempotency guard as webhook processing, so a duplicate score can no longer produce a duplicate alert or ledger write.',
-    retestResult: 'Reran the same rolling-restart scenario: duplicate scoring events still occurred, as expected given the batching trade-off, but zero duplicate alerts or ledger writes resulted.',
-    conclusion: 'FAIL on the original hypothesis \u2014 duplicates do occur. Mitigated rather than eliminated: documented as a known, bounded behavior instead of calling the retest a clean pass.'
-  }
-];
-
 const tabs = document.getElementById('exp-tabs');
 const detail = document.getElementById('exp-detail');
 let current = EXPERIMENTS[0];

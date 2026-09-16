@@ -1,74 +1,5 @@
 import { escapeHTML } from './app.js';
-
-const ENDPOINTS = [
-  {
-    id: 'create-transaction',
-    method: 'POST',
-    path: '/demo/transactions',
-    description: 'Submit a transaction for validation and reconciliation, mirroring the PesaGuard ingestion contract.',
-    samplePayload: { amount: 1500, currency: 'KES', type: 'PAYMENT' },
-    validate(payload) {
-      const errors = [];
-      if (typeof payload.amount !== 'number' || payload.amount <= 0) errors.push('amount must be a positive number');
-      if (payload.currency !== 'KES') errors.push('currency must be "KES" in this demo');
-      if (!['PAYMENT', 'WITHDRAWAL', 'DEPOSIT', 'TRANSFER'].includes(payload.type)) errors.push('type must be one of PAYMENT, WITHDRAWAL, DEPOSIT, TRANSFER');
-      return errors;
-    },
-    respond(payload) {
-      return {
-        status: 'accepted',
-        transaction_id: `DEMO-${Math.floor(Math.random() * 90000 + 10000)}`,
-        amount: payload.amount,
-        currency: payload.currency,
-        type: payload.type,
-        processed_at: new Date().toISOString()
-      };
-    }
-  },
-  {
-    id: 'get-reconciliation',
-    method: 'GET',
-    path: '/demo/reconciliation/{id}',
-    description: 'Fetch reconciliation status for a transaction ID.',
-    samplePayload: { id: 'DEMO-00042' },
-    validate(payload) {
-      const errors = [];
-      if (!payload.id || typeof payload.id !== 'string') errors.push('id must be a string');
-      return errors;
-    },
-    respond(payload) {
-      return {
-        id: payload.id,
-        matched: true,
-        ledger_balance: 154230.5,
-        discrepancy: 0,
-        checked_at: new Date().toISOString()
-      };
-    }
-  },
-  {
-    id: 'score-anomaly',
-    method: 'POST',
-    path: '/demo/fraud/score',
-    description: 'Return a risk score for a transaction feature vector.',
-    samplePayload: { amount: 42000, channel: 'AGENT', velocity_1h: 6 },
-    validate(payload) {
-      const errors = [];
-      if (typeof payload.amount !== 'number') errors.push('amount must be a number');
-      if (!['USSD', 'APP', 'API', 'AGENT'].includes(payload.channel)) errors.push('channel must be one of USSD, APP, API, AGENT');
-      if (typeof payload.velocity_1h !== 'number') errors.push('velocity_1h must be a number');
-      return errors;
-    },
-    respond(payload) {
-      const score = Math.min(0.98, (payload.amount / 50000) * 0.5 + (payload.velocity_1h / 10) * 0.5);
-      return {
-        risk_score: Number(score.toFixed(3)),
-        flagged: score > 0.7,
-        scored_at: new Date().toISOString()
-      };
-    }
-  }
-];
+import { ENDPOINTS } from './content/endpoints.js';
 
 const tabs = document.getElementById('endpoint-tabs');
 const metaEl = document.getElementById('endpoint-meta');
@@ -81,10 +12,57 @@ const statusEl = document.getElementById('response-status');
 const responseBody = document.getElementById('response-body');
 const latencyNote = document.getElementById('latency-note');
 const copyBtn = document.getElementById('copy-response');
+const copyCurlBtn = document.getElementById('copy-curl');
+const copyPythonBtn = document.getElementById('copy-python');
 const historyBody = document.getElementById('history-tbody');
+
+// This host is never called — RFC 2606 reserves .example for documentation,
+// so a curl/Python snippet built from it can't accidentally hit a real
+// endpoint if someone runs it as-is.
+const DEMO_BASE_URL = 'https://demo.pesaguard.example';
 
 let currentEndpoint = ENDPOINTS[0];
 let history = [];
+
+function resolvedPath(payload) {
+  let path = currentEndpoint.path;
+  if (payload && typeof payload === 'object') {
+    path = path.replace(/\{(\w+)\}/g, (_, key) => (key in payload ? encodeURIComponent(payload[key]) : `{${key}}`));
+  }
+  return path;
+}
+
+function buildCurl() {
+  const parsed = parsePayload();
+  const payload = parsed.ok ? parsed.value : currentEndpoint.samplePayload;
+  const url = `${DEMO_BASE_URL}${resolvedPath(payload)}`;
+  if (currentEndpoint.method === 'GET') {
+    return `curl -X GET "${url}"`;
+  }
+  const body = JSON.stringify(payload);
+  return `curl -X ${currentEndpoint.method} "${url}" \\\n  -H "Content-Type: application/json" \\\n  -d '${body}'`;
+}
+
+function buildPython() {
+  const parsed = parsePayload();
+  const payload = parsed.ok ? parsed.value : currentEndpoint.samplePayload;
+  const url = `${DEMO_BASE_URL}${resolvedPath(payload)}`;
+  if (currentEndpoint.method === 'GET') {
+    return `import requests\n\nresponse = requests.get("${url}")\nprint(response.status_code, response.json())`;
+  }
+  return `import requests\n\npayload = ${JSON.stringify(payload, null, 4)}\n\nresponse = requests.${currentEndpoint.method.toLowerCase()}(\n    "${url}",\n    json=payload,\n)\nprint(response.status_code, response.json())`;
+}
+
+async function copyText(text, btn) {
+  try {
+    await navigator.clipboard.writeText(text);
+    const original = btn.textContent;
+    btn.textContent = 'Copied';
+    setTimeout(() => { btn.textContent = original; }, 1200);
+  } catch {
+    btn.textContent = 'Unable to copy';
+  }
+}
 
 function renderTabs() {
   tabs.innerHTML = ENDPOINTS.map(ep => `
@@ -174,14 +152,8 @@ function send() {
 sendBtn.addEventListener('click', send);
 validateBtn.addEventListener('click', validate);
 resetBtn.addEventListener('click', selectEndpoint);
-copyBtn.addEventListener('click', async () => {
-  try {
-    await navigator.clipboard.writeText(responseBody.textContent);
-    copyBtn.textContent = 'Copied';
-    setTimeout(() => { copyBtn.textContent = 'Copy'; }, 1200);
-  } catch {
-    copyBtn.textContent = 'Unable to copy';
-  }
-});
+copyBtn.addEventListener('click', () => copyText(responseBody.textContent, copyBtn));
+copyCurlBtn.addEventListener('click', () => copyText(buildCurl(), copyCurlBtn));
+copyPythonBtn.addEventListener('click', () => copyText(buildPython(), copyPythonBtn));
 
 selectEndpoint();

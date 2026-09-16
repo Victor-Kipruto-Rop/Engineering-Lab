@@ -32,6 +32,9 @@
 
       <div class="metric-grid" id="metric-grid"></div>
 
+      <div class="tabs" id="range-tabs" role="tablist" aria-label="Time range" style="margin-top:1.5rem;"></div>
+      <p id="range-note" style="font-size:var(--fs-00); color:var(--text-2); margin:0.4rem 0 0;"></p>
+
       <div class="chart-panel">
         <div class="chart-head">
           <h3>Requests &amp; events per second</h3>
@@ -47,6 +50,15 @@
         </div>
         <svg id="chart-latency" viewBox="0 0 600 220" preserveAspectRatio="none"></svg>
       </div>
+
+      <section style="margin-top:2.5rem;">
+        <div class="page-header" style="border:none; padding-bottom:0; margin-bottom:1rem;">
+          <h2>Simulate an incident</h2>
+          <p>These buttons don't touch anything real — they temporarily override the metrics above and walk through the failure path this system is designed to handle. Every result here is a <strong style="color:var(--text);">SIMULATION</strong>, not an observed incident.</p>
+        </div>
+        <div class="card-actions" id="incident-buttons" style="flex-wrap:wrap;"></div>
+        <div id="incident-panel" style="margin-top:1.25rem;"></div>
+      </section>
     </main>
   </div>
 </div>

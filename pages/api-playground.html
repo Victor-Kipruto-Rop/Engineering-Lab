@@ -26,7 +26,7 @@
       </div>
 
       <div class="callout" style="margin-bottom:1.5rem;">
-        <strong style="color:var(--info); font-family:var(--font-mono);">DEMO ENVIRONMENT</strong> — No production data is accessed. Every response below is generated locally by this page.
+        <strong style="color:var(--info); font-family:var(--font-mono);">DEMO ENVIRONMENT</strong> — No production data is accessed. Every response below is generated locally by this page. Copied curl/Python snippets point at <code>demo.pesaguard.example</code>, a documentation-only host (RFC 2606) that will never resolve.
       </div>
 
       <div class="tabs" id="endpoint-tabs" role="tablist"></div>
@@ -43,6 +43,10 @@
             <button class="btn primary" id="send-btn">Send request</button>
             <button class="btn" id="validate-btn">Validate JSON</button>
             <button class="btn" id="reset-btn">Reset</button>
+          </div>
+          <div class="card-actions" style="margin-top:0.5rem;">
+            <button class="btn" id="copy-curl" style="padding:0.35rem 0.7rem; font-size:var(--fs-00);">Copy as curl</button>
+            <button class="btn" id="copy-python" style="padding:0.35rem 0.7rem; font-size:var(--fs-00);">Copy as Python</button>
           </div>
           <p id="validation-msg" style="font-size:var(--fs-00); margin-top:0.5rem;"></p>
         </div>

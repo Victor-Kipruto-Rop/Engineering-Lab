@@ -30,46 +30,76 @@
 
       <div class="summary-stats" id="summary-stats"></div>
 
-      <div class="filters">
-        <div class="field search">
-          <label for="q">Search transaction ID</label>
-          <input type="search" id="q" placeholder="DEMO-00001…">
+      <div class="tabs" id="view-tabs" role="tablist" style="margin:1.25rem 0;">
+        <button role="tab" data-view="table" class="active" aria-selected="true">Table</button>
+        <button role="tab" data-view="schema" aria-selected="false">Schema</button>
+        <button role="tab" data-view="quality" aria-selected="false">Quality</button>
+        <button role="tab" data-view="lineage" aria-selected="false">Lineage</button>
+      </div>
+
+      <div id="panel-table">
+        <div class="filters">
+          <div class="field search">
+            <label for="q">Search transaction ID</label>
+            <input type="search" id="q" placeholder="DEMO-00001…">
+          </div>
+          <div class="field">
+            <label for="f-type">Type</label>
+            <select id="f-type"><option value="">All types</option></select>
+          </div>
+          <div class="field">
+            <label for="f-status">Status</label>
+            <select id="f-status"><option value="">All statuses</option></select>
+          </div>
         </div>
-        <div class="field">
-          <label for="f-type">Type</label>
-          <select id="f-type"><option value="">All types</option></select>
+
+        <p class="result-count" id="result-count" role="status" aria-live="polite"></p>
+
+        <div class="table-wrap">
+          <table id="data-table">
+            <thead>
+              <tr>
+                <th data-key="id">Transaction ID</th>
+                <th data-key="timestamp">Timestamp</th>
+                <th data-key="type">Type</th>
+                <th data-key="amount">Amount (KES)</th>
+                <th data-key="status">Status</th>
+                <th data-key="anomalyScore">Anomaly score</th>
+                <th data-key="channel">Channel</th>
+              </tr>
+            </thead>
+            <tbody id="data-tbody"></tbody>
+          </table>
         </div>
-        <div class="field">
-          <label for="f-status">Status</label>
-          <select id="f-status"><option value="">All statuses</option></select>
+
+        <div class="pagination">
+          <span id="page-info"></span>
+          <div class="controls">
+            <button class="btn" id="prev-page">← Prev</button>
+            <button class="btn" id="next-page">Next →</button>
+          </div>
         </div>
       </div>
 
-      <p class="result-count" id="result-count" role="status" aria-live="polite"></p>
-
-      <div class="table-wrap">
-        <table id="data-table">
-          <thead>
-            <tr>
-              <th data-key="id">Transaction ID</th>
-              <th data-key="timestamp">Timestamp</th>
-              <th data-key="type">Type</th>
-              <th data-key="amount">Amount (KES)</th>
-              <th data-key="status">Status</th>
-              <th data-key="anomalyScore">Anomaly score</th>
-              <th data-key="channel">Channel</th>
-            </tr>
-          </thead>
-          <tbody id="data-tbody"></tbody>
-        </table>
+      <div id="panel-schema" hidden>
+        <p style="color:var(--text-2); font-size:var(--fs-0); margin-bottom:1rem;">The schema of the dataset actually loaded on this page — not an aspirational data model.</p>
+        <div class="table-wrap">
+          <table id="schema-table">
+            <thead><tr><th>Column</th><th>Type</th><th>Nullable</th><th>Example</th><th>Constraints</th></tr></thead>
+            <tbody id="schema-tbody"></tbody>
+          </table>
+        </div>
       </div>
 
-      <div class="pagination">
-        <span id="page-info"></span>
-        <div class="controls">
-          <button class="btn" id="prev-page">← Prev</button>
-          <button class="btn" id="next-page">Next →</button>
-        </div>
+      <div id="panel-quality" hidden>
+        <p style="color:var(--text-2); font-size:var(--fs-0); margin-bottom:1rem;">Computed live from the 240 rows loaded above — not hardcoded figures.</p>
+        <div class="summary-stats" id="quality-stats"></div>
+        <div id="quality-notes" style="margin-top:1rem;"></div>
+      </div>
+
+      <div id="panel-lineage" hidden>
+        <p style="color:var(--text-2); font-size:var(--fs-0); margin-bottom:1rem;">The conceptual path this dataset represents inside PesaGuard's pipeline (see the Architecture and Case Study pages) — illustrative, not a live lineage tracker.</p>
+        <div id="lineage-diagram"></div>
       </div>
     </main>
   </div>

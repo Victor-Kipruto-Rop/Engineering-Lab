@@ -114,7 +114,7 @@ function applyFilters() {
     renderEmptyState(grid, 'No systems match these filters. Try clearing one.');
     return;
   }
-  grid.innerHTML = results.map(systemCard).join('');
+  grid.innerHTML = results.map(sys => systemCard(sys)).join('');
 }
 
 (async () => {
