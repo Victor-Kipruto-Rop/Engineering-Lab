@@ -16,23 +16,10 @@
 <body data-nav="index.html">
 <div class="rail-scrim"></div>
 <div class="shell">
-  <aside class="rail">
-    <div class="rail-brand">
-      <span class="mark" aria-hidden="true">VK</span>
-      <span class="name">Engineering Lab</span>
-      <span class="role">Victor Kipruto Rop</span>
-    </div>
-    <!-- nav injected by app.js -->
-    <div class="rail-footer">
-      <a href="https://www.victorkipruto.com">&larr; Back to Victor Kipruto</a>
-    </div>
-  </aside>
+  <aside class="rail" id="rail"></aside>
 
   <div>
-    <div class="rail-toggle">
-      <button type="button" aria-expanded="false" aria-controls="primary-rail" class="btn" style="padding:0.3rem 0.6rem;">☰</button>
-      ENGINEERING LAB
-    </div>
+    <div class="rail-toggle" id="rail-toggle"></div>
 
     <main id="main">
       <section class="hero">
@@ -45,7 +32,7 @@
         </div>
         <div class="hero-stats" id="hero-stats" aria-label="Registry summary">
           <div class="stat"><span class="value">—</span><span class="label">Systems tracked</span></div>
-          <div class="stat"><span class="value">—</span><span class="label">Active in production</span></div>
+          <div class="stat"><span class="value">—</span><span class="label">Live or deployed</span></div>
           <div class="stat"><span class="value">—</span><span class="label">With live architecture maps</span></div>
         </div>
       </section>
@@ -68,47 +55,11 @@
 
 <script type="module" src="js/app.js"></script>
 <script type="module">
-import { loadJSON, renderEmptyState, escapeHTML } from './js/app.js';
+import { loadJSON, renderEmptyState } from './js/app.js';
+import { systemCard } from './js/components/system-card.js';
 
 const grid = document.getElementById('system-grid');
 const statsEl = document.getElementById('hero-stats');
-
-function statusClass(status) {
-  return status.toLowerCase();
-}
-
-function systemCard(sys) {
-  const features = [
-    ['architecture', 'Architecture'],
-    ['monitor', 'Monitor'],
-    ['data', 'Data'],
-    ['api', 'API'],
-    ['code', 'Code'],
-    ['caseStudy', 'Case study']
-  ];
-  return `
-    <article class="card">
-      <div class="card-head">
-        <div>
-          <h3>${escapeHTML(sys.name)}</h3>
-          <span class="category">${escapeHTML(sys.category)}</span>
-        </div>
-        <span class="status-pill ${statusClass(sys.status)}">${escapeHTML(sys.status)}</span>
-      </div>
-      <p>${escapeHTML(sys.description)}</p>
-      <div class="tag-row">
-        ${sys.technologies.map(t => `<span class="tag">${escapeHTML(t)}</span>`).join('')}
-      </div>
-      <div class="feature-row">
-        ${features.map(([key, label]) => `<span class="${sys.features[key] ? 'on' : ''}">${sys.features[key] ? '●' : '○'} ${label}</span>`).join('')}
-      </div>
-      <div class="card-actions">
-        <a class="btn primary" href="pages/systems.html?system=${encodeURIComponent(sys.id)}">Inspect system</a>
-        <a class="btn" href="${sys.github}" target="_blank" rel="noopener">GitHub</a>
-      </div>
-    </article>
-  `;
-}
 
 (async () => {
   const result = await loadJSON('data/systems.json');
@@ -117,13 +68,13 @@ function systemCard(sys) {
     return;
   }
   const systems = result.data.systems;
-  grid.innerHTML = systems.slice(0, 4).map(systemCard).join('');
+  grid.innerHTML = systems.slice(0, 4).map(sys => systemCard(sys, 'pages/')).join('');
 
-  const active = systems.filter(s => s.status === 'ACTIVE').length;
+  const liveOrDeployed = systems.filter(s => s.status === 'LIVE' || s.status === 'DEPLOYED').length;
   const withArch = systems.filter(s => s.features.architecture).length;
   const stats = statsEl.querySelectorAll('.stat .value');
   stats[0].textContent = systems.length;
-  stats[1].textContent = active;
+  stats[1].textContent = liveOrDeployed;
   stats[2].textContent = withArch;
 })();
 </script>

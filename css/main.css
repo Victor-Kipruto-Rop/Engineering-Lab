@@ -232,7 +232,9 @@ main {
   background: currentColor;
 }
 
-.status-pill.active, .status-pill.operational { color: var(--accent); }
+.status-pill.live, .status-pill.operational { color: var(--accent); }
+.status-pill.deployed { color: var(--info); }
+.status-pill.benchmarked { color: var(--accent); }
 .status-pill.demo { color: var(--info); }
 .status-pill.experimental { color: var(--warning); }
 .status-pill.archived, .status-pill.degraded { color: var(--text-2); }

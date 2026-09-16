@@ -21,13 +21,37 @@ function resolveHref(href, inPages) {
   return href.replace('pages/', '');
 }
 
+/**
+ * The rail brand block and footer link are identical on every page.
+ * Defined once here so a future change to either is a one-file edit,
+ * not a nine-file find-and-replace.
+ */
+function buildBrand() {
+  const div = document.createElement('div');
+  div.className = 'rail-brand';
+  div.innerHTML = `
+    <span class="mark" aria-hidden="true">VK</span>
+    <span class="name">Engineering Lab</span>
+    <span class="role">Victor Kipruto Rop</span>
+  `;
+  return div;
+}
+
+function buildFooter() {
+  const div = document.createElement('div');
+  div.className = 'rail-footer';
+  div.innerHTML = `<a href="https://www.victorkipruto.com">&larr; Back to Victor Kipruto</a>`;
+  return div;
+}
+
 export function initShell(activeHref) {
   const inPages = location.pathname.includes('/pages/');
-  const rail = document.querySelector('.rail');
+  const rail = document.getElementById('rail') || document.querySelector('.rail');
   if (!rail) return;
 
   const nav = document.createElement('nav');
   nav.setAttribute('aria-label', 'Primary');
+  nav.id = 'primary-rail';
   NAV_ITEMS.forEach(item => {
     const a = document.createElement('a');
     a.href = resolveHref(item.href, inPages);
@@ -39,30 +63,37 @@ export function initShell(activeHref) {
     nav.appendChild(a);
   });
 
-  const existingNav = rail.querySelector('nav');
-  if (existingNav) existingNav.replaceWith(nav);
-  else rail.appendChild(nav);
+  rail.innerHTML = '';
+  rail.append(buildBrand(), nav, buildFooter());
 
-  // Mobile rail toggle
-  const toggle = document.querySelector('.rail-toggle');
+  // Mobile rail toggle — the toggle button itself is built here too, so
+  // every page only needs an empty `#rail-toggle` container.
+  const toggleContainer = document.getElementById('rail-toggle');
   const scrim = document.querySelector('.rail-scrim');
-  if (toggle && scrim) {
-    toggle.addEventListener('click', () => {
-      rail.classList.toggle('open');
-      scrim.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', rail.classList.contains('open'));
-    });
-    scrim.addEventListener('click', () => {
-      rail.classList.remove('open');
-      scrim.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-    });
-    nav.addEventListener('click', (e) => {
-      if (e.target.closest('a')) {
+  if (toggleContainer) {
+    toggleContainer.innerHTML = `
+      <button type="button" aria-expanded="false" aria-controls="primary-rail" class="btn" style="padding:0.3rem 0.6rem;">☰</button>
+      ENGINEERING LAB
+    `;
+    const toggle = toggleContainer.querySelector('button');
+    if (toggle && scrim) {
+      toggle.addEventListener('click', () => {
+        rail.classList.toggle('open');
+        scrim.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', rail.classList.contains('open'));
+      });
+      scrim.addEventListener('click', () => {
         rail.classList.remove('open');
         scrim.classList.remove('open');
-      }
-    });
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+      nav.addEventListener('click', (e) => {
+        if (e.target.closest('a')) {
+          rail.classList.remove('open');
+          scrim.classList.remove('open');
+        }
+      });
+    }
   }
 }
 

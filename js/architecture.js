@@ -8,6 +8,9 @@ const dialog = document.getElementById('node-dialog');
 const dialogTitle = document.getElementById('dialog-title');
 const dialogBody = document.getElementById('dialog-body');
 const dialogClose = document.getElementById('dialog-close');
+const metaCallout = document.getElementById('arch-meta-callout');
+
+const DEFAULT_META_TEXT = 'Select a component to view details here, or use the panel that opens on click for the full breakdown.';
 
 const NODE_W = 160;
 const NODE_H = 46;
@@ -186,11 +189,21 @@ function renderSystem(id) {
 
   const params = new URLSearchParams(location.search);
   const requested = params.get('system');
-  const initial = ids.includes(requested) ? requested : ids[0];
+  const requestedIsAvailable = requested && ids.includes(requested);
+  const initial = requestedIsAvailable ? requested : ids[0];
   systemSelect.value = initial;
   renderSystem(initial);
 
-  systemSelect.addEventListener('change', () => renderSystem(systemSelect.value));
+  // Don't silently substitute a different system's diagram when the one
+  // requested via ?system= isn't documented — say so instead.
+  if (requested && !requestedIsAvailable && metaCallout) {
+    metaCallout.textContent = `Architecture for "${requested}" isn't documented yet. Showing ${archData.systems[initial].name}, the only system with a published diagram so far.`;
+  }
+
+  systemSelect.addEventListener('change', () => {
+    if (metaCallout) metaCallout.textContent = DEFAULT_META_TEXT;
+    renderSystem(systemSelect.value);
+  });
 
   document.getElementById('zoom-in').addEventListener('click', () => zoom(0.85));
   document.getElementById('zoom-out').addEventListener('click', () => zoom(1.18));

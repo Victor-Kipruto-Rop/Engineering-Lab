@@ -120,7 +120,7 @@ for message in consumer:
     category: 'Fraud Detection',
     purpose: 'Combines transaction velocity and amount into a bounded risk score before a statistical model is consulted.',
     github: 'https://github.com/Victor-Kipruto-Rop',
-    explanation: 'This runs first because it is cheap and has no external dependency. It also acts as the fallback path if the statistical model is unavailable, per the architecture\\'s failure handling.',
+    explanation: 'This runs first because it is cheap and has no external dependency. It also acts as the fallback path if the statistical model is unavailable, per the architecture\'s failure handling.',
     code: `def rule_score(amount: float, velocity_1h: int) -> float:
     amount_component = min(amount / 50_000, 1.0) * 0.5
     velocity_component = min(velocity_1h / 10, 1.0) * 0.5
@@ -232,7 +232,7 @@ function renderDetail() {
       <strong style="color:var(--text);">Purpose</strong> — ${current.purpose}
     </div>
     <p style="margin-top:1rem; font-size: var(--fs-0); color: var(--text-2);">${current.explanation}</p>
-    <a class="btn" href="${current.github}" target="_blank" rel="noopener" style="margin-top:0.5rem;">View source on GitHub</a>
+    <a class="btn" href="${current.github}" target="_blank" rel="noopener" style="margin-top:0.5rem;">GitHub profile</a>
   `;
   document.getElementById('copy-code').addEventListener('click', async (e) => {
     await navigator.clipboard.writeText(current.code);
